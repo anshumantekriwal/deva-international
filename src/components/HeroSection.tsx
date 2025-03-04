@@ -73,7 +73,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div ref={backgroundRef} style={{
         backgroundPosition: '50% 30%'
-      }} className="absolute inset-0 bg-leather-texture bg-cover bg-center transition-transform duration-[10000ms] ease-linear" />
+      }} className="absolute inset-0 bg-leather-texture bg-cover bg-center transition-transform duration-[10000ms] ease-linear opacity 10" />
         {/* Removed the white gradient overlay to make background clearer */}
       </div>
       
