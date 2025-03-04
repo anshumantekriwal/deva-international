@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -79,7 +78,7 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Raleway', 'sans-serif'],
+				sans: ['CircularStd', 'Raleway', 'sans-serif'],
 				serif: ['Playfair Display', 'serif']
 			},
 			keyframes: {
@@ -116,6 +115,25 @@ export default {
 					'0%': { transform: 'translateY(0px)' },
 					'50%': { transform: 'translateY(-10px)' },
 					'100%': { transform: 'translateY(0px)' }
+				},
+				'float-slow': {
+					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+					'25%': { transform: 'translateY(-15px) rotate(1deg)' },
+					'50%': { transform: 'translateY(-7px) rotate(-1deg)' },
+					'75%': { transform: 'translateY(-15px) rotate(1deg)' },
+				},
+				'rotate-3d': {
+					'0%': { transform: 'rotateY(0deg) rotateX(0deg)' },
+					'50%': { transform: 'rotateY(15deg) rotateX(5deg)' },
+					'100%': { transform: 'rotateY(0deg) rotateX(0deg)' },
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-500px 0' },
+					'100%': { backgroundPosition: '500px 0' },
+				},
+				'background-pan': {
+					'0%': { backgroundPosition: '0% center' },
+					'100%': { backgroundPosition: '200% center' },
 				}
 			},
 			animation: {
@@ -126,7 +144,11 @@ export default {
 				'slide-in': 'slide-in 0.6s ease-out forwards',
 				'scale-in': 'scale-in 0.4s ease-out forwards',
 				'image-rotate': 'image-rotate 7s ease-in-out infinite',
-				'float': 'float 6s ease-in-out infinite'
+				'float': 'float 6s ease-in-out infinite',
+				'float-slow': 'float-slow 8s ease-in-out infinite',
+				'rotate-3d': 'rotate-3d 7s ease-in-out infinite',
+				'shimmer': 'shimmer 3s infinite linear',
+				'background-pan': 'background-pan 10s linear infinite',
 			},
 			backgroundImage: {
 				'leather-texture': "url('/lovable-uploads/d62b6da9-2c5d-4284-9cf7-2bede616c2ea.png')",

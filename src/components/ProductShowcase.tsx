@@ -1,57 +1,155 @@
 
-import { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-// Sample product data
-const productData = [
+// Updated product data with collections
+const productCollections = [
   {
     id: 1,
-    name: "Classic Leather Tote",
-    category: "Bags",
-    description: "A timeless design crafted from premium full-grain leather",
-    imageUrl: "/lovable-uploads/d62b6da9-2c5d-4284-9cf7-2bede616c2ea.png"
+    name: "Luxury Collection",
+    description: "Premium full-grain leather crafted with meticulous attention to detail",
+    theme: "bg-gradient-to-br from-leather-tan/30 to-leather-light/10",
+    products: [
+      {
+        id: 101,
+        name: "Classic Leather Tote",
+        category: "Bags",
+        description: "A timeless design crafted from premium full-grain leather",
+        imageUrl: "/images/product-tote.jpg"
+      },
+      {
+        id: 102,
+        name: "Executive Briefcase",
+        category: "Bags",
+        description: "Sophisticated design for the modern professional",
+        imageUrl: "/images/product-briefcase.jpg"
+      },
+      {
+        id: 103,
+        name: "Designer Wallet",
+        category: "Wallets",
+        description: "Elegant style with functional compartments",
+        imageUrl: "/images/product-wallet.jpg"
+      },
+      {
+        id: 104,
+        name: "Premium Card Holder",
+        category: "Wallets",
+        description: "Sleek minimalist design with multiple card slots",
+        imageUrl: "/images/product-cardholder.jpg"
+      }
+    ]
   },
   {
     id: 2,
-    name: "Executive Wallet",
-    category: "Wallets",
-    description: "Sleek and functional with multiple card slots and compartments",
-    imageUrl: "/lovable-uploads/d62b6da9-2c5d-4284-9cf7-2bede616c2ea.png"
+    name: "Vintage Collection",
+    description: "Artisanal leather goods with classic styling and distressed finishes",
+    theme: "bg-gradient-to-br from-amber-100/50 to-amber-50/30",
+    products: [
+      {
+        id: 201,
+        name: "Distressed Leather Messenger",
+        category: "Bags",
+        description: "Weathered look with authentic vintage appeal",
+        imageUrl: "/images/product-messenger.jpg"
+      },
+      {
+        id: 202,
+        name: "Heritage Duffle Bag",
+        category: "Bags",
+        description: "Travel in style with this timeless piece",
+        imageUrl: "/images/product-duffle.jpg"
+      },
+      {
+        id: 203,
+        name: "Rustic Bifold Wallet",
+        category: "Wallets",
+        description: "Classic design with a naturally aged appearance",
+        imageUrl: "/images/product-bifold.jpg"
+      },
+      {
+        id: 204,
+        name: "Antique Card Case",
+        category: "Wallets",
+        description: "Compact design with old-world character",
+        imageUrl: "/images/product-cardcase.jpg"
+      }
+    ]
   },
   {
     id: 3,
-    name: "Travel Duffel",
-    category: "Bags",
-    description: "Spacious and durable for all your travel essentials",
-    imageUrl: "/lovable-uploads/d62b6da9-2c5d-4284-9cf7-2bede616c2ea.png"
-  },
-  {
-    id: 4,
-    name: "Slim Card Holder",
-    category: "Wallets",
-    description: "Minimalist design for the modern professional",
-    imageUrl: "/lovable-uploads/d62b6da9-2c5d-4284-9cf7-2bede616c2ea.png"
+    name: "Modern Collection",
+    description: "Contemporary designs featuring clean lines and innovative details",
+    theme: "bg-gradient-to-br from-slate-100/50 to-blue-50/30",
+    products: [
+      {
+        id: 301,
+        name: "Minimalist Crossbody",
+        category: "Bags",
+        description: "Sleek contemporary design for everyday use",
+        imageUrl: "/images/product-crossbody.jpg"
+      },
+      {
+        id: 302,
+        name: "Tech Organizer",
+        category: "Accessories",
+        description: "Designed for the digital lifestyle with cable management",
+        imageUrl: "/images/product-organizer.jpg"
+      },
+      {
+        id: 303,
+        name: "Slim Passport Holder",
+        category: "Travel",
+        description: "Streamlined design for the modern traveler",
+        imageUrl: "/images/product-passport.jpg"
+      },
+      {
+        id: 304,
+        name: "Urban Backpack",
+        category: "Bags",
+        description: "Sophisticated urban style with practical features",
+        imageUrl: "/images/product-backpack.jpg"
+      }
+    ]
   }
 ];
 
-const ProductCard = ({ product, index }: { product: typeof productData[0], index: number }) => {
+const ProductCard = ({ product, index, delay = 0 }: { product: any, index: number, delay?: number }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100 + index * 150);
-    
-    return () => clearTimeout(timer);
-  }, [index]);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setIsVisible(true);
+          }, delay + index * 150);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [index, delay]);
 
   return (
     <div 
+      ref={cardRef}
       className={`product-card ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-700 ease-out`}
+      style={{ transitionDelay: `${delay + index * 100}ms` }}
     >
-      <div className="overflow-hidden" onClick={() => navigate('/products')}>
+      <div className="overflow-hidden rounded-t-md" onClick={() => navigate('/products')}>
         <img 
           src={product.imageUrl} 
           alt={product.name} 
@@ -64,41 +162,169 @@ const ProductCard = ({ product, index }: { product: typeof productData[0], index
         <p className="text-sm text-leather-dark/70 mb-5">{product.description}</p>
         <button 
           onClick={() => navigate('/products')}
-          className="inline-flex items-center text-leather hover:text-leather-dark font-medium text-sm transition-colors"
+          className="inline-flex items-center text-leather hover:text-leather-dark font-medium text-sm transition-colors group"
         >
           View Details
-          <ArrowRight className="ml-2 h-4 w-4" />
+          <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
     </div>
   );
 };
 
-const ProductShowcase = () => {
+const CollectionSlider = () => {
+  const [activeCollection, setActiveCollection] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const handlePrev = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setActiveCollection((prev) => 
+      prev === 0 ? productCollections.length - 1 : prev - 1
+    );
+    setTimeout(() => setIsAnimating(false), 700);
+  };
+
+  const handleNext = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setActiveCollection((prev) => 
+      (prev + 1) % productCollections.length
+    );
+    setTimeout(() => setIsAnimating(false), 700);
+  };
+
   return (
-    <section className="bg-white py-20">
+    <div className="relative">
+      {/* Collection slides */}
+      <div 
+        ref={sliderRef}
+        className="overflow-hidden rounded-xl"
+      >
+        <div 
+          className="transition-transform duration-700 ease-in-out flex"
+          style={{ transform: `translateX(-${activeCollection * 100}%)` }}
+        >
+          {productCollections.map((collection, idx) => (
+            <div 
+              key={collection.id}
+              className={`w-full flex-shrink-0 ${collection.theme} p-8 sm:p-12`}
+            >
+              <div className="max-w-4xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl font-serif font-medium mb-3 text-leather-dark">{collection.name}</h3>
+                <p className="text-leather-dark/70 mb-8 max-w-2xl">{collection.description}</p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {collection.products.map((product, index) => (
+                    <ProductCard 
+                      key={product.id} 
+                      product={product} 
+                      index={index} 
+                      delay={idx === activeCollection ? 300 : 0}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Controls */}
+      <button 
+        onClick={handlePrev}
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm shadow-md flex items-center justify-center text-leather-dark hover:bg-white transition-all z-10"
+        aria-label="Previous collection"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      
+      <button 
+        onClick={handleNext}
+        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm shadow-md flex items-center justify-center text-leather-dark hover:bg-white transition-all z-10"
+        aria-label="Next collection"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+      
+      {/* Indicators */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+        {productCollections.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setActiveCollection(idx)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              idx === activeCollection 
+                ? 'w-6 bg-leather' 
+                : 'bg-leather-dark/30 hover:bg-leather-dark/50'
+            }`}
+            aria-label={`Go to collection ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ProductShowcase = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <section 
+      ref={sectionRef}
+      className="bg-white py-20 relative overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-subtle-grain opacity-10" />
+      
       <div className="section-container">
-        <div className="max-w-3xl mx-auto text-center mb-14">
-          <h2 className="section-title">Our Signature Products</h2>
+        <div className={`max-w-3xl mx-auto text-center mb-14 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <span className="inline-block px-4 py-1 mb-4 bg-leather/10 rounded-full">
+            <p className="text-xs font-medium tracking-widest text-leather-dark">
+              EXQUISITE CRAFTSMANSHIP
+            </p>
+          </span>
+          <h2 className="section-title text-gradient">Our Signature Collections</h2>
           <p className="text-leather-dark/70 text-lg max-w-2xl mx-auto">
-            Explore our collection of premium handcrafted leather goods. 
-            Each piece is meticulously designed and crafted to offer both functionality and timeless style.
+            Explore our diverse range of premium handcrafted leather goods. 
+            Each collection represents a unique aesthetic, crafted with meticulous attention to detail and exceptional materials.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {productData.map((product, index) => (
-            <ProductCard key={product.id} product={product} index={index} />
-          ))}
+        <div className={`transition-all duration-1000 ease-out delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <CollectionSlider />
         </div>
         
         <div className="mt-16 text-center">
           <button 
-            onClick={() => window.location.href = '/products'}
-            className="btn-primary inline-flex items-center"
+            onClick={() => navigate('/products')}
+            className="btn-primary inline-flex items-center group shine-effect overflow-hidden"
           >
-            View All Products
-            <ArrowRight className="ml-2 h-5 w-5" />
+            Explore All Collections
+            <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>
