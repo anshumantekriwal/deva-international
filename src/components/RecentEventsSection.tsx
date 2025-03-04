@@ -73,19 +73,8 @@ const RecentEventsSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    // Scroll timeline to active event
-    if (timelineRef.current) {
-      const activeElement = timelineRef.current.querySelector(`[data-index="${activeIndex}"]`);
-      if (activeElement) {
-        activeElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
-        });
-      }
-    }
-  }, [activeIndex]);
+  // Removed the scrolling effect that was forcing users to scroll to this section
+  // The useEffect that was using scrollIntoView has been removed
 
   return (
     <section 
@@ -123,7 +112,7 @@ const RecentEventsSection = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
                 <img 
-                  src={event.image} 
+                  src={`https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1200&h=800&q=80`} 
                   alt={event.title} 
                   className="object-cover w-full h-full"
                 />

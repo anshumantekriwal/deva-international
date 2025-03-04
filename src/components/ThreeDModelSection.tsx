@@ -88,7 +88,7 @@ const ThreeDModelSection = () => {
               
               <div className="relative max-w-xs p-4">
                 <img 
-                  src="/images/3d-leather-bag.png" 
+                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&h=800&q=80" 
                   alt="3D Model of Premium Leather Handbag" 
                   className="object-contain w-full h-auto drop-shadow-2xl"
                 />
