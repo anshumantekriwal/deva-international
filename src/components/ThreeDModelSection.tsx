@@ -62,7 +62,7 @@ const ThreeDModelSection = () => {
               CRAFTSMANSHIP REDEFINED
             </p>
           </span>
-          <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-6 text-gradient">
+          <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-6 text-leather-dark">
             Exquisite Design in 3D
           </h2>
           <p className="text-leather-dark/70 text-lg max-w-2xl mx-auto">
@@ -88,7 +88,7 @@ const ThreeDModelSection = () => {
               
               <div className="relative max-w-xs p-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&h=800&q=80" 
+                  src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=800&h=800&q=80" 
                   alt="3D Model of Premium Leather Handbag" 
                   className="object-contain w-full h-auto drop-shadow-2xl"
                 />

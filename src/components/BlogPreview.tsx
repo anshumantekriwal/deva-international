@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
@@ -10,7 +9,7 @@ const blogPosts = [
     title: "The Art of Leather Tanning: Traditional Methods Meet Modern Techniques",
     excerpt: "Explore how we combine centuries-old leather tanning methods with innovative approaches to create sustainable, premium quality products.",
     date: "2023-05-15",
-    imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&h=800&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1531017580982-24964937627f?auto=format&fit=crop&w=1200&h=800&q=80",
     readTime: "5 min read"
   },
   {
@@ -18,7 +17,7 @@ const blogPosts = [
     title: "From Hide to Handbag: The Journey of Leather Craftsmanship",
     excerpt: "Follow the fascinating process of transforming raw leather into beautifully crafted bags, from selection of materials to final stitching.",
     date: "2023-04-22",
-    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&h=800&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1563484394447-9c2bc404bff4?auto=format&fit=crop&w=1200&h=800&q=80",
     readTime: "7 min read"
   },
   {
@@ -26,7 +25,7 @@ const blogPosts = [
     title: "Sustainability in Leather Production: Our Commitment to Ethical Practices",
     excerpt: "Learn about our environmentally conscious approaches to leather manufacturing and how we're reducing our ecological footprint.",
     date: "2023-03-10",
-    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&h=800&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1605077088626-38a762f8b7b8?auto=format&fit=crop&w=1200&h=800&q=80",
     readTime: "6 min read"
   }
 ];

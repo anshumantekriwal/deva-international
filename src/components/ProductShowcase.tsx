@@ -16,28 +16,32 @@ const productCollections = [
         name: "Classic Leather Tote",
         category: "Bags",
         description: "A timeless design crafted from premium full-grain leather",
-        imageUrl: "/images/product-tote.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-2 row-span-2"
       },
       {
         id: 102,
         name: "Executive Briefcase",
         category: "Bags",
         description: "Sophisticated design for the modern professional",
-        imageUrl: "/images/product-briefcase.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-1 row-span-1"
       },
       {
         id: 103,
         name: "Designer Wallet",
         category: "Wallets",
         description: "Elegant style with functional compartments",
-        imageUrl: "/images/product-wallet.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-1 row-span-1"
       },
       {
         id: 104,
         name: "Premium Card Holder",
         category: "Wallets",
         description: "Sleek minimalist design with multiple card slots",
-        imageUrl: "/images/product-cardholder.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1607164917696-c67d6a2ec106?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-2 row-span-1"
       }
     ]
   },
@@ -52,28 +56,32 @@ const productCollections = [
         name: "Distressed Leather Messenger",
         category: "Bags",
         description: "Weathered look with authentic vintage appeal",
-        imageUrl: "/images/product-messenger.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1548863227-3af567fc3b27?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-1 row-span-2"
       },
       {
         id: 202,
         name: "Heritage Duffle Bag",
         category: "Bags",
         description: "Travel in style with this timeless piece",
-        imageUrl: "/images/product-duffle.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-2 row-span-1"
       },
       {
         id: 203,
         name: "Rustic Bifold Wallet",
         category: "Wallets",
         description: "Classic design with a naturally aged appearance",
-        imageUrl: "/images/product-bifold.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1607164917696-c67d6a2ec106?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-1 row-span-1"
       },
       {
         id: 204,
         name: "Antique Card Case",
         category: "Wallets",
         description: "Compact design with old-world character",
-        imageUrl: "/images/product-cardcase.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-2 row-span-1"
       }
     ]
   },
@@ -88,28 +96,32 @@ const productCollections = [
         name: "Minimalist Crossbody",
         category: "Bags",
         description: "Sleek contemporary design for everyday use",
-        imageUrl: "/images/product-crossbody.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-2 row-span-1"
       },
       {
         id: 302,
         name: "Tech Organizer",
         category: "Accessories",
         description: "Designed for the digital lifestyle with cable management",
-        imageUrl: "/images/product-organizer.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-1 row-span-1"
       },
       {
         id: 303,
         name: "Slim Passport Holder",
         category: "Travel",
         description: "Streamlined design for the modern traveler",
-        imageUrl: "/images/product-passport.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1624687943971-e86af76d57de?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-1 row-span-1"
       },
       {
         id: 304,
         name: "Urban Backpack",
         category: "Bags",
         description: "Sophisticated urban style with practical features",
-        imageUrl: "/images/product-backpack.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=800&h=800&q=80",
+        size: "col-span-2 row-span-2"
       }
     ]
   }
@@ -146,14 +158,14 @@ const ProductCard = ({ product, index, delay = 0 }: { product: any, index: numbe
   return (
     <div 
       ref={cardRef}
-      className={`product-card ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-700 ease-out`}
+      className={`product-card ${product.size} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-700 ease-out`}
       style={{ transitionDelay: `${delay + index * 100}ms` }}
     >
-      <div className="overflow-hidden rounded-t-md" onClick={() => navigate('/products')}>
+      <div className="overflow-hidden rounded-t-md h-full" onClick={() => navigate('/products')}>
         <img 
           src={product.imageUrl} 
           alt={product.name} 
-          className="product-image"
+          className="product-image h-60 w-full object-cover"
         />
       </div>
       <div className="p-6">
@@ -215,7 +227,7 @@ const CollectionSlider = () => {
                 <h3 className="text-2xl sm:text-3xl font-serif font-medium mb-3 text-leather-dark">{collection.name}</h3>
                 <p className="text-leather-dark/70 mb-8 max-w-2xl">{collection.description}</p>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-4 grid-rows-3 gap-6 h-[550px]">
                   {collection.products.map((product, index) => (
                     <ProductCard 
                       key={product.id} 
@@ -301,13 +313,13 @@ const ProductShowcase = () => {
       <div className="absolute inset-0 bg-subtle-grain opacity-10" />
       
       <div className="section-container">
-        <div className={`max-w-3xl mx-auto text-center mb-14 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="max-w-3xl mx-auto text-center mb-14">
           <span className="inline-block px-4 py-1 mb-4 bg-leather/10 rounded-full">
             <p className="text-xs font-medium tracking-widest text-leather-dark">
               EXQUISITE CRAFTSMANSHIP
             </p>
           </span>
-          <h2 className="section-title text-gradient">Our Signature Collections</h2>
+          <h2 className="section-title text-leather-dark">Our Signature Collections</h2>
           <p className="text-leather-dark/70 text-lg max-w-2xl mx-auto">
             Explore our diverse range of premium handcrafted leather goods. 
             Each collection represents a unique aesthetic, crafted with meticulous attention to detail and exceptional materials.
@@ -321,7 +333,7 @@ const ProductShowcase = () => {
         <div className="mt-16 text-center">
           <button 
             onClick={() => navigate('/products')}
-            className="btn-primary inline-flex items-center group shine-effect overflow-hidden"
+            className="btn-primary inline-flex items-center group"
           >
             Explore All Collections
             <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />

@@ -9,7 +9,7 @@ const events = [
     location: "Milan, Italy",
     date: "November 15-18, 2023",
     description: "Showcased our premium leather collection at one of Europe's most prestigious leather exhibitions.",
-    image: "/images/event-milan.jpg"
+    image: "https://images.unsplash.com/photo-1595341595379-cf1cd0fb73d7?auto=format&fit=crop&w=1200&h=800&q=80"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const events = [
     location: "Hong Kong",
     date: "September 5-8, 2023",
     description: "Participated in Asia's largest leather trade fair, establishing key partnerships with distributors across the region.",
-    image: "/images/event-hongkong.jpg"
+    image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1200&h=800&q=80"
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const events = [
     location: "New York, USA",
     date: "July 20-23, 2023",
     description: "Presented our innovative leather processing techniques at this premier industry gathering.",
-    image: "/images/event-newyork.jpg"
+    image: "https://images.unsplash.com/photo-1459247623674-aa0c19771815?auto=format&fit=crop&w=1200&h=800&q=80"
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const events = [
     location: "Stockholm, Sweden",
     date: "May 10-12, 2023",
     description: "Shared our eco-friendly leather production practices at this sustainability-focused conference.",
-    image: "/images/event-stockholm.jpg"
+    image: "https://images.unsplash.com/photo-1515549832467-8783363e19b6?auto=format&fit=crop&w=1200&h=800&q=80"
   }
 ];
 
@@ -73,9 +73,6 @@ const RecentEventsSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Removed the scrolling effect that was forcing users to scroll to this section
-  // The useEffect that was using scrollIntoView has been removed
-
   return (
     <section 
       ref={sectionRef}
@@ -112,7 +109,7 @@ const RecentEventsSection = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
                 <img 
-                  src={`https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1200&h=800&q=80`} 
+                  src={event.image} 
                   alt={event.title} 
                   className="object-cover w-full h-full"
                 />

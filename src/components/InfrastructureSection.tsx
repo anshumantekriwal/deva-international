@@ -103,7 +103,7 @@ const InfrastructureSection = () => {
               <div className="relative bg-white shadow-xl rounded-lg p-5 md:p-8">
                 <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-md mb-6">
                   <img 
-                    src="/lovable-uploads/d62b6da9-2c5d-4284-9cf7-2bede616c2ea.png" 
+                    src="https://images.unsplash.com/photo-1631467895429-15d0f4644a3d?auto=format&fit=crop&w=1200&h=800&q=80" 
                     alt="Deva International manufacturing facility" 
                     className="object-cover h-full w-full animate-image-rotate"
                   />

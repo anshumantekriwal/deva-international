@@ -88,7 +88,7 @@ const CertificationsSection = () => {
                         : 'opacity-0 scale-90'
                     }`}
                   >
-                    <div className="mb-8 transform transition-transform duration-700 ease-in-out animate-float-slow">
+                    <div className="mb-8 transform transition-transform duration-700 ease-in-out">
                       {cert.icon}
                     </div>
                     <h3 className="text-2xl font-serif font-medium text-center mb-4">{cert.title}</h3>
@@ -142,7 +142,7 @@ const CertificationsSection = () => {
                     <div className="mr-3 flex-shrink-0 opacity-80">
                       {cert.icon}
                     </div>
-                    <h3 className="font-medium">{cert.title}</h3>
+                    <h3 className="font-medium text-sm md:text-base">{cert.title}</h3>
                   </div>
                 </div>
               ))}
