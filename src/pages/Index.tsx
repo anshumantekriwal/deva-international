@@ -3,12 +3,12 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import HeroSection from '@/components/HeroSection';
 import ProductShowcase from '@/components/ProductShowcase';
-import InfrastructureSection from '@/components/InfrastructureSection';
 import BlogPreview from '@/components/BlogPreview';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CertificationsSection from '@/components/CertificationsSection';
 import RecentEventsSection from '@/components/RecentEventsSection';
+import LegacyContent from '@/components/LegacyContent';
 
 const Index = () => {
   useEffect(() => {
@@ -34,7 +34,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <ProductShowcase />
-        <InfrastructureSection />
+        <LegacyContent />
         <CertificationsSection />
         <RecentEventsSection />
         <BlogPreview />
