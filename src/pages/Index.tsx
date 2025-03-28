@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import HeroSection from '@/components/HeroSection';
 import ProductShowcase from '@/components/ProductShowcase';
 import InfrastructureSection from '@/components/InfrastructureSection';
@@ -17,6 +18,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Manufacturer, Supplier of Leather Goods | Deva International</title>
+        <meta 
+          name="description" 
+          content="Discover high-quality leather goods from Deva International Exim Pvt Ltd. With 25+ years of experience, global exports, and certified compliance, we deliver excellence."
+        />
+        <meta 
+          name="keywords" 
+          content="supplier of leather goods, leather goods manufacturer, sustainable leather, premium leather bags, high-quality leather wallets, premium leather accessories"
+        />
+      </Helmet>
+      
       <Navbar />
       
       <main>
