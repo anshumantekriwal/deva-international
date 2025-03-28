@@ -82,9 +82,7 @@ const HeroSection = () => {
           {/* Text Content - Expanded to take full width */}
           <div className={`lg:col-span-8 lg:col-start-3 text-center transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="inline-block px-4 py-1 mb-6 bg-leather-tan/20 backdrop-blur-sm rounded-full animate-pulse">
-              <p className="text-xs font-medium tracking-widest text-leather-dark">
-                PREMIUM LEATHER CRAFTSMANSHIP
-              </p>
+              <p className="text-xs font-medium tracking-widest text-leather-dark">INTERNATIONALLY TRUSTED LEATHER GOODS SUPPLIER</p>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold leading-tight text-balance mb-6 text-gradient">
               Timeless Elegance in Every Stitch
