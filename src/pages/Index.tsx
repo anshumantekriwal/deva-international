@@ -7,7 +7,6 @@ import InfrastructureSection from '@/components/InfrastructureSection';
 import BlogPreview from '@/components/BlogPreview';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ThreeDModelSection from '@/components/ThreeDModelSection';
 import CertificationsSection from '@/components/CertificationsSection';
 import RecentEventsSection from '@/components/RecentEventsSection';
 
@@ -35,7 +34,6 @@ const Index = () => {
       <main>
         <HeroSection />
         <ProductShowcase />
-        <ThreeDModelSection />
         <InfrastructureSection />
         <CertificationsSection />
         <RecentEventsSection />

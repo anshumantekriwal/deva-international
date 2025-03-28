@@ -1,214 +1,298 @@
-
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { cn } from "@/lib/utils";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuContent,
+  NavigationMenuTrigger,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu"
 
 const Navbar = () => {
-  const location = useLocation();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    // Close mobile menu and dropdowns when route changes
+  const closeMobileMenu = () => {
     setMobileMenuOpen(false);
-    setActiveDropdown(null);
-  }, [location]);
-
-  const toggleDropdown = (dropdown: string) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
-
-  const closeDropdowns = () => {
-    setActiveDropdown(null);
-  };
-
-  // Dropdown content definitions
-  const dropdownContents = {
-    aboutUs: [
-      { name: 'Who We Are', path: '/about/who-we-are' },
-      { name: 'From The Founder', path: '/about/founder' },
-      { name: 'Awards & Achievements', path: '/about/awards' },
-      { name: 'Mission & Vision', path: '/about/mission' },
-    ],
-    designs: [
-      { name: 'Handbags', path: '/designs/handbags' },
-      { name: 'Wallets', path: '/designs/wallets' },
-      { name: 'Belts', path: '/designs/belts' },
-      { name: 'Custom Products', path: '/designs/custom' },
-    ],
-    infrastructure: [
-      { name: 'Quality Control', path: '/infrastructure/quality' },
-      { name: 'Manufacturing', path: '/infrastructure/manufacturing' },
-      { name: 'Workplace', path: '/infrastructure/workplace' },
-    ],
-  };
-
-  // Main navigation items
-  const navItems = [
-    { name: 'Home', path: '/', hasDropdown: false },
-    { name: 'About Us', path: '/about', hasDropdown: true, dropdown: 'aboutUs' },
-    { name: 'Designs', path: '/designs', hasDropdown: true, dropdown: 'designs' },
-    { name: 'Infrastructure', path: '/infrastructure', hasDropdown: true, dropdown: 'infrastructure' },
-    { name: 'Contact Us', path: '/contact', hasDropdown: false },
-  ];
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled 
-          ? "bg-white bg-opacity-90 backdrop-blur-sm shadow-md py-3" 
-          : "bg-transparent py-5"
-      )}
-    >
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center">
-          <span className="text-2xl font-serif font-bold tracking-tight text-leather-dark">
-            DEVA
-          </span>
-          <span className="text-xs tracking-widest font-medium ml-1 text-leather-dark mt-3">
-            INTERNATIONAL
-          </span>
-        </Link>
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border/40 transition-all">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center">
+              <img src="/placeholder.svg" alt="Deva International" className="h-8 w-auto" />
+              <span className="ml-2 font-serif text-xl font-medium text-leather-dark">Deva International</span>
+            </Link>
+          </div>
 
-        {/* Desktop Navigation */}
-        <nav 
-          className="hidden md:flex space-x-8"
-          onMouseLeave={closeDropdowns}
-        >
-          {navItems.map((item) => (
-            <div key={item.name} className="relative group">
-              {item.hasDropdown ? (
-                <button
-                  className={cn(
-                    "nav-link text-sm tracking-wide font-medium flex items-center",
-                    (location.pathname === item.path || location.pathname.startsWith(item.path + '/') || activeDropdown === item.dropdown) && 
-                    "text-leather after:scale-x-100"
-                  )}
-                  onMouseEnter={() => toggleDropdown(item.dropdown)}
-                  onClick={() => toggleDropdown(item.dropdown)}
-                >
-                  {item.name}
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-              ) : (
-                <Link
-                  to={item.path}
-                  className={cn(
-                    "nav-link text-sm tracking-wide font-medium",
-                    location.pathname === item.path && "text-leather after:scale-x-100"
-                  )}
-                >
-                  {item.name}
-                </Link>
-              )}
-
-              {/* Dropdown Menu */}
-              {item.hasDropdown && activeDropdown === item.dropdown && (
-                <div className="absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
-                  <div className="py-1">
-                    {dropdownContents[item.dropdown].map((dropdownItem) => (
-                      <Link
-                        key={dropdownItem.name}
-                        to={dropdownItem.path}
-                        className="block px-4 py-2 text-sm text-leather-dark hover:bg-leather-tan/10"
-                      >
-                        {dropdownItem.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </nav>
-
-        {/* Mobile menu button */}
-        <button 
-          className="md:hidden"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6 text-leather-dark" />
-          ) : (
-            <Menu className="h-6 w-6 text-leather-dark" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-leather-tan/20 animate-fade-in">
-          <div className="container max-w-7xl mx-auto px-4 py-4 flex flex-col space-y-1">
-            {navItems.map((item) => (
-              <div key={item.name} className="py-1">
-                {item.hasDropdown ? (
-                  <>
-                    <button
-                      className={cn(
-                        "w-full text-left py-2 px-4 text-sm font-medium rounded-md transition-colors flex items-center justify-between",
-                        (location.pathname === item.path || location.pathname.startsWith(item.path + '/') || activeDropdown === item.dropdown) 
-                          ? "bg-leather-tan/20 text-leather-dark" 
-                          : "text-leather-dark/80 hover:bg-leather-tan/10"
-                      )}
-                      onClick={() => toggleDropdown(item.dropdown)}
-                    >
-                      {item.name}
-                      <ChevronDown className={cn(
-                        "h-4 w-4 transition-transform",
-                        activeDropdown === item.dropdown ? "rotate-180" : ""
-                      )} />
-                    </button>
-                    
-                    {/* Mobile Dropdown */}
-                    {activeDropdown === item.dropdown && (
-                      <div className="pl-4 mt-1 space-y-1 border-l-2 border-leather-tan/20 ml-4">
-                        {dropdownContents[item.dropdown].map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.name}
-                            to={dropdownItem.path}
-                            className="block py-2 px-4 text-sm text-leather-dark/80 hover:bg-leather-tan/10 rounded-md"
-                          >
-                            {dropdownItem.name}
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="nav-link">Home</Link>
+            
+            {/* About Us Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-transparent hover:text-leather">About Us</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/about" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Who We Are</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Learn about our company's history and values
+                            </p>
                           </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className={cn(
-                      "block py-2 px-4 text-sm font-medium rounded-md transition-colors",
-                      location.pathname === item.path 
-                        ? "bg-leather-tan/20 text-leather-dark" 
-                        : "text-leather-dark/80 hover:bg-leather-tan/10"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </div>
-            ))}
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/legacy" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Our Legacy</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Discover our journey of craftsmanship since 1995
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/founder" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">From The Founder</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              A message from our visionary leadership
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/awards" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Awards & Achievements</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Our recognition in the industry
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/mission" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Mission & Vision</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Our guiding principles and future aspirations
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            
+            {/* Designs Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-transparent hover:text-leather">Designs</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/products" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">All Collections</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Explore our complete range of leather products
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/products/luxury" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Luxury Collection</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Premium full-grain leather with meticulous details
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/products/vintage" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Vintage Collection</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Artisanal leather goods with classic styling
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/products/modern" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Modern Collection</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Contemporary designs with innovative details
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            
+            {/* Infrastructure Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent text-foreground hover:bg-transparent hover:text-leather">Infrastructure</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/quality-control" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Quality Control</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Our rigorous quality assurance processes
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/manufacturing" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Manufacturing</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              State-of-the-art facilities and processes
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link to="/workplace" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Workplace</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              Our ethical and sustainable working environment
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            
+            <Link to="/contact" className="nav-link">Contact Us</Link>
+          </nav>
+          
+          {/* Mobile Menu Button */}
+          <div className="flex md:hidden">
+            <button 
+              type="button" 
+              className="text-leather-dark p-2"
+              onClick={toggleMobileMenu}
+              aria-expanded={mobileMenuOpen}
+            >
+              <span className="sr-only">Open main menu</span>
+              {mobileMenuOpen ? (
+                <X className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
           </div>
         </div>
-      )}
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`${mobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+          <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-leather-dark hover:bg-leather-light/10" onClick={closeMobileMenu}>
+            Home
+          </Link>
+          
+          <details className="group [&_summary::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer items-center justify-between px-3 py-2 rounded-md text-base font-medium text-leather-dark hover:bg-leather-light/10">
+              <span>About Us</span>
+              <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+            </summary>
+            <div className="pl-4 mt-1 space-y-1">
+              <Link to="/about" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Who We Are
+              </Link>
+              <Link to="/legacy" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Our Legacy
+              </Link>
+              <Link to="/founder" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                From The Founder
+              </Link>
+              <Link to="/awards" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Awards & Achievements
+              </Link>
+              <Link to="/mission" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Mission & Vision
+              </Link>
+            </div>
+          </details>
+          
+          <details className="group [&_summary::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer items-center justify-between px-3 py-2 rounded-md text-base font-medium text-leather-dark hover:bg-leather-light/10">
+              <span>Designs</span>
+              <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+            </summary>
+            <div className="pl-4 mt-1 space-y-1">
+              <Link to="/products" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                All Collections
+              </Link>
+              <Link to="/products/luxury" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Luxury Collection
+              </Link>
+              <Link to="/products/vintage" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Vintage Collection
+              </Link>
+              <Link to="/products/modern" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Modern Collection
+              </Link>
+            </div>
+          </details>
+          
+          <details className="group [&_summary::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer items-center justify-between px-3 py-2 rounded-md text-base font-medium text-leather-dark hover:bg-leather-light/10">
+              <span>Infrastructure</span>
+              <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+            </summary>
+            <div className="pl-4 mt-1 space-y-1">
+              <Link to="/quality-control" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Quality Control
+              </Link>
+              <Link to="/manufacturing" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Manufacturing
+              </Link>
+              <Link to="/workplace" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Workplace
+              </Link>
+            </div>
+          </details>
+          
+          <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-leather-dark hover:bg-leather-light/10" onClick={closeMobileMenu}>
+            Contact Us
+          </Link>
+        </div>
+      </div>
     </header>
   );
 };
