@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import CertificationsSection from '@/components/CertificationsSection';
 import RecentEventsSection from '@/components/RecentEventsSection';
 import LegacyContent from '@/components/LegacyContent';
+import WhyChooseUs from '@/components/WhyChooseUs';
 
 const Index = () => {
   useEffect(() => {
@@ -35,6 +36,7 @@ const Index = () => {
         <HeroSection />
         <ProductShowcase />
         <LegacyContent />
+        <WhyChooseUs />
         <CertificationsSection />
         <RecentEventsSection />
         <BlogPreview />
