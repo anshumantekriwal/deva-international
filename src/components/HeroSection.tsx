@@ -87,9 +87,7 @@ const HeroSection = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold leading-tight text-balance mb-6 text-gradient">
               Timeless Elegance in Every Stitch
             </h1>
-            <p className="text-lg md:text-xl text-leather-dark/90 mb-8 max-w-2xl mx-auto font-sans text-pretty">
-              Crafting exceptional leather products for those who appreciate refined quality and enduring design. Discover our exclusive collection.
-            </p>
+            <p className="text-lg md:text-xl text-leather-dark/90 mb-8 max-w-2xl mx-auto font-sans text-pretty">Since 1993, Deva International EXIM Pvt.Ltd. has been the preferred partner for leading fashion brands and importers worldwide. Combining sustainability, craftsmanship, and innovative designs, that elevate your leather accessories collection.</p>
             
             {/* Certifications */}
             <div className="mb-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
