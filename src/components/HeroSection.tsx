@@ -107,7 +107,7 @@ const HeroSection = () => {
                 Explore Collection
                 <ChevronRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
               </button>
-              <button onClick={() => navigate('/about')} className="btn-secondary flex items-center text-leather-dark">
+              <button onClick={() => navigate('/about')} className="btn-secondary flex items-center text-white">
                 About Us
               </button>
             </div>
