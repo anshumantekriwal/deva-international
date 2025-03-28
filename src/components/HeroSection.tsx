@@ -85,7 +85,7 @@ const HeroSection = () => {
               <p className="text-xs font-medium tracking-widest text-leather-dark">INTERNATIONALLY TRUSTED LEATHER GOODS SUPPLIER</p>
             </div>
             <h1 className="text-4xl sm:text-5xl font-serif leading-tight text-balance mb-6 text-gradient text-leather-dark font-semibold md:text-5xl">Global Excellence in Leather Craftsmanship</h1>
-            <p className="text-lg md:text-xl text-leather-dark/90 mb-8 max-w-2xl mx-auto font-sans text-pretty">Since 1993, Deva International EXIM Pvt.Ltd. has been the preferred partner for leading fashion brands and importers worldwide. Combining sustainability, craftsmanship, and innovative designs, that elevate your leather accessories collection.</p>
+            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-sans text-pretty text-leather-DEFAULT font-normal">Since 1993, Deva International EXIM Pvt.Ltd. has been the preferred partner for leading fashion brands and importers worldwide. Combining sustainability, craftsmanship, and innovative designs, that elevate your leather accessories collection.</p>
             
             {/* Certifications */}
             <div className="mb-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
