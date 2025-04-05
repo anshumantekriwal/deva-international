@@ -18,6 +18,8 @@ import ProductsPage from "./pages/Products";
 import ProductsHandbags from "./pages/ProductsHandbags";
 import ProductsWallets from "./pages/ProductsWallets";
 import ProductsAccessories from "./pages/ProductsAccessories";
+import ContactPage from "./pages/Contact";
+import AdminPage from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +43,8 @@ const App = () => (
             <Route path="/products/premium-handbags" element={<ProductsHandbags />} />
             <Route path="/products/leather-wallets" element={<ProductsWallets />} />
             <Route path="/products/accessories" element={<ProductsAccessories />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/admin" element={<AdminPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
