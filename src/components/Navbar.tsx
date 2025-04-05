@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -90,7 +91,7 @@ const Navbar = () => {
               </NavigationMenuList>
             </NavigationMenu>
             
-            {/* Designs Dropdown */}
+            {/* Designs Dropdown - Updated with the three product categories */}
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -109,30 +110,30 @@ const Navbar = () => {
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/products/luxury" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Luxury Collection</div>
+                          <Link to="/products/premium-handbags" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Premium Handbags</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Premium full-grain leather with meticulous details
+                              Exquisite handcrafted leather handbags for all occasions
                             </p>
                           </Link>
                         </NavigationMenuLink>
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/products/vintage" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Vintage Collection</div>
+                          <Link to="/products/leather-wallets" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Leather Wallets</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Artisanal leather goods with classic styling
+                              Classic and contemporary wallet designs
                             </p>
                           </Link>
                         </NavigationMenuLink>
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/products/modern" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Modern Collection</div>
+                          <Link to="/products/accessories" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Accessories</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Contemporary designs with innovative details
+                              Complement your style with premium leather accessories
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -245,14 +246,14 @@ const Navbar = () => {
               <Link to="/products" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
                 All Collections
               </Link>
-              <Link to="/products/luxury" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
-                Luxury Collection
+              <Link to="/products/premium-handbags" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Premium Handbags
               </Link>
-              <Link to="/products/vintage" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
-                Vintage Collection
+              <Link to="/products/leather-wallets" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Leather Wallets
               </Link>
-              <Link to="/products/modern" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
-                Modern Collection
+              <Link to="/products/accessories" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Accessories
               </Link>
             </div>
           </details>

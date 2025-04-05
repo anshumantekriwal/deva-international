@@ -4,28 +4,31 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
-// Updated product collections with a single featured image per collection
+// Updated product collections with our three main categories
 const productCollections = [
   {
     id: 1,
     name: "Premium Handbags",
     description: "Exquisite handcrafted leather handbags for the modern professional",
     theme: "bg-gradient-to-br from-leather-tan/30 to-leather-light/10",
-    featuredImage: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&h=800&q=80"
+    featuredImage: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&h=800&q=80",
+    path: "/products/premium-handbags"
   },
   {
     id: 2,
     name: "Leather Wallets",
     description: "Classic and contemporary wallet designs for all occasions",
     theme: "bg-gradient-to-br from-amber-100/50 to-amber-50/30",
-    featuredImage: "https://images.unsplash.com/photo-1548863227-3af567fc3b27?auto=format&fit=crop&w=800&h=800&q=80"
+    featuredImage: "https://images.unsplash.com/photo-1548863227-3af567fc3b27?auto=format&fit=crop&w=800&h=800&q=80",
+    path: "/products/leather-wallets"
   },
   {
     id: 3,
     name: "Accessories",
     description: "Complement your style with our premium leather accessories",
     theme: "bg-gradient-to-br from-slate-100/50 to-blue-50/30",
-    featuredImage: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=800&h=800&q=80"
+    featuredImage: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=800&h=800&q=80",
+    path: "/products/accessories"
   }
 ];
 
@@ -45,7 +48,7 @@ const CollectionCard = ({ collection }: { collection: typeof productCollections[
         <h3 className="text-2xl font-serif font-medium mb-2 text-leather-dark">{collection.name}</h3>
         <p className="text-leather-dark/70 mb-6">{collection.description}</p>
         <button 
-          onClick={() => navigate('/products')}
+          onClick={() => navigate(collection.path)}
           className="btn-primary inline-flex items-center group"
         >
           Explore Collection

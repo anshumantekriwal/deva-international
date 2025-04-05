@@ -8,60 +8,28 @@ import { ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
-// Sample product categories with more realistic imagery
+// Product categories with their images
 const productCategories = [
   {
     id: 1,
     name: "Premium Handbags",
     description: "Exquisite handcrafted leather handbags for the modern professional",
     imageUrl: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&h=800&q=80",
-    featured: true
+    path: "/products/premium-handbags"
   },
   {
     id: 2,
     name: "Leather Wallets",
     description: "Classic and contemporary wallet designs for all occasions",
     imageUrl: "https://images.unsplash.com/photo-1548863227-3af567fc3b27?auto=format&fit=crop&w=800&h=800&q=80",
-    featured: true
+    path: "/products/leather-wallets"
   },
   {
     id: 3,
     name: "Accessories",
     description: "Complement your style with our premium leather accessories",
     imageUrl: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=800&h=800&q=80",
-    featured: true
-  }
-];
-
-// Sample featured products
-const featuredProducts = [
-  {
-    id: 1,
-    name: "Executive Leather Briefcase",
-    category: "Handbags",
-    description: "Sophisticated design with premium full-grain leather and secure compartments",
-    imageUrl: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&h=800&q=80"
-  },
-  {
-    id: 2,
-    name: "Classic Bifold Wallet",
-    category: "Wallets",
-    description: "Timeless bifold wallet crafted from vegetable-tanned leather",
-    imageUrl: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&h=800&q=80"
-  },
-  {
-    id: 3,
-    name: "Leather Card Holder",
-    category: "Accessories",
-    description: "Slim, minimalist card holder with RFID protection",
-    imageUrl: "https://images.unsplash.com/photo-1581431886211-6b932f8367f2?auto=format&fit=crop&w=800&h=800&q=80"
-  },
-  {
-    id: 4,
-    name: "Designer Tote Bag",
-    category: "Handbags",
-    description: "Spacious, elegant tote with premium hardware and lining",
-    imageUrl: "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&h=800&q=80"
+    path: "/products/accessories"
   }
 ];
 
@@ -153,65 +121,12 @@ const Products = () => {
                   <CardContent className="p-6">
                     <p className="text-leather-dark/80 mb-6">{category.description}</p>
                     <Button 
-                      onClick={handleViewCatalog}
+                      onClick={() => window.location.href = category.path}
                       variant="outline" 
                       className="text-leather hover:text-white hover:bg-leather border-leather"
                     >
                       Browse Collection
                     </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-        
-        {/* Featured Products Section */}
-        <section className="py-16 md:py-20 bg-leather-cream/30">
-          <div className="container max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-serif font-semibold tracking-tight text-leather-dark mb-4">
-                  Featured Products
-                </h2>
-                <p className="text-lg text-leather-dark/70 max-w-2xl">
-                  A small selection from our extensive catalog of premium leather goods.
-                </p>
-              </div>
-              <div className="mt-4 md:mt-0">
-                <Button 
-                  onClick={handleViewCatalog}
-                  variant="default" 
-                  className="bg-leather hover:bg-leather-dark group"
-                >
-                  View Full Catalog
-                  <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {featuredProducts.map((product) => (
-                <Card key={product.id} className="h-full overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                  <div className="aspect-square overflow-hidden">
-                    <img 
-                      src={product.imageUrl} 
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                    />
-                  </div>
-                  <CardContent className="p-5">
-                    <div className="mb-2">
-                      <span className="text-xs font-medium text-leather tracking-wide uppercase">
-                        {product.category}
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-serif font-medium text-leather-dark mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-sm text-leather-dark/70 line-clamp-2">
-                      {product.description}
-                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -223,7 +138,7 @@ const Products = () => {
                 size="lg" 
                 className="bg-leather hover:bg-leather-dark group"
               >
-                View All Products
+                View Full Catalog
                 <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
