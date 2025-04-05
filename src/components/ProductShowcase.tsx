@@ -8,22 +8,22 @@ import { Card, CardContent } from '@/components/ui/card';
 const productCollections = [
   {
     id: 1,
-    name: "Luxury Collection",
-    description: "Premium full-grain leather crafted with meticulous attention to detail",
+    name: "Premium Handbags",
+    description: "Exquisite handcrafted leather handbags for the modern professional",
     theme: "bg-gradient-to-br from-leather-tan/30 to-leather-light/10",
     featuredImage: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&h=800&q=80"
   },
   {
     id: 2,
-    name: "Vintage Collection",
-    description: "Artisanal leather goods with classic styling and distressed finishes",
+    name: "Leather Wallets",
+    description: "Classic and contemporary wallet designs for all occasions",
     theme: "bg-gradient-to-br from-amber-100/50 to-amber-50/30",
     featuredImage: "https://images.unsplash.com/photo-1548863227-3af567fc3b27?auto=format&fit=crop&w=800&h=800&q=80"
   },
   {
     id: 3,
-    name: "Modern Collection",
-    description: "Contemporary designs featuring clean lines and innovative details",
+    name: "Accessories",
+    description: "Complement your style with our premium leather accessories",
     theme: "bg-gradient-to-br from-slate-100/50 to-blue-50/30",
     featuredImage: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=800&h=800&q=80"
   }
@@ -49,7 +49,7 @@ const CollectionCard = ({ collection }: { collection: typeof productCollections[
           className="btn-primary inline-flex items-center group"
         >
           Explore Collection
-          <ArrowRight className="ml-2 h-5 w-5" />
+          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
         </button>
       </CardContent>
     </Card>
@@ -95,10 +95,10 @@ const ProductShowcase = () => {
               EXQUISITE CRAFTSMANSHIP
             </p>
           </span>
-          <h2 className="section-title text-leather-dark">Our Signature Collections</h2>
+          <h2 className="section-title text-leather-dark">Our Product Categories</h2>
           <p className="text-leather-dark/70 text-lg max-w-2xl mx-auto">
             Explore our diverse range of premium handcrafted leather goods. 
-            Each collection represents a unique aesthetic, crafted with meticulous attention to detail and exceptional materials.
+            Each category represents our commitment to exceptional materials and meticulous attention to detail.
           </p>
         </div>
         

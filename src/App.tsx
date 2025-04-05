@@ -14,6 +14,7 @@ import CertificatesPage from "./pages/Certificates";
 import QualityControlPage from "./pages/QualityControl";
 import ManufacturingPage from "./pages/Manufacturing";
 import EthicalWorkplacePage from "./pages/EthicalWorkplace";
+import ProductsPage from "./pages/Products";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/quality-control" element={<QualityControlPage />} />
             <Route path="/manufacturing" element={<ManufacturingPage />} />
             <Route path="/ethical-workplace" element={<EthicalWorkplacePage />} />
+            <Route path="/products" element={<ProductsPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
