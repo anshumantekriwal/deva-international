@@ -1,12 +1,8 @@
-
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-leather-dark text-white pt-16 pb-8">
+  return <footer className="text-white pt-16 pb-8 bg-leather-black">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Logo and About */}
@@ -46,42 +42,27 @@ const Footer = () => {
             <h3 className="text-lg font-medium mb-6 font-serif">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link
-                  to="/"
-                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
-                >
+                <Link to="/" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/about"
-                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
-                >
+                <Link to="/about" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/products"
-                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
-                >
+                <Link to="/products" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
                   Products
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/quality-control"
-                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
-                >
+                <Link to="/quality-control" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
                   Quality Control
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/contact"
-                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
-                >
+                <Link to="/contact" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
                   Contact
                 </Link>
               </li>
@@ -93,38 +74,25 @@ const Footer = () => {
             <h3 className="text-lg font-medium mb-6 font-serif">Products</h3>
             <ul className="space-y-3">
               <li>
-                <Link
-                  to="/products/premium-handbags"
-                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
-                >
+                <Link to="/products/premium-handbags" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
                   Premium Handbags
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/products/leather-wallets"
-                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
-                >
+                <Link to="/products/leather-wallets" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
                   Leather Wallets
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/products/accessories"
-                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
-                >
+                <Link to="/products/accessories" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
                   Accessories
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open('https://www.docsend.com/catalog-link', '_blank');
-                  }}
-                >
+                <a href="#" className="text-sm text-gray-300 hover:text-leather-light transition-colors" onClick={e => {
+                e.preventDefault();
+                window.open('https://www.docsend.com/catalog-link', '_blank');
+              }}>
                   View Full Catalog
                 </a>
               </li>
@@ -173,8 +141,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
