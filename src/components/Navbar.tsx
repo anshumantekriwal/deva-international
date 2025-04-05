@@ -56,17 +56,17 @@ const Navbar = () => {
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/legacy" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Our Legacy</div>
+                          <Link to="/who-we-are" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Our Experience</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Discover our journey of craftsmanship since 1995
+                              Our 32+ years of excellence in the industry
                             </p>
                           </Link>
                         </NavigationMenuLink>
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/founder" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                          <Link to="/from-the-founder" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">From The Founder</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               A message from our visionary leadership
@@ -76,20 +76,10 @@ const Navbar = () => {
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/awards" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Awards & Achievements</div>
+                          <Link to="/certificates" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Certificates & Compliance</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Our recognition in the industry
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link to="/mission" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Mission & Vision</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Our guiding principles and future aspirations
+                              Our certifications and industry standards
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -175,17 +165,17 @@ const Navbar = () => {
                           <Link to="/manufacturing" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                             <div className="text-sm font-medium leading-none">Manufacturing</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              State-of-the-art facilities and processes
+                              State-of-the-art facilities and R&D
                             </p>
                           </Link>
                         </NavigationMenuLink>
                       </li>
                       <li>
                         <NavigationMenuLink asChild>
-                          <Link to="/workplace" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                            <div className="text-sm font-medium leading-none">Workplace</div>
+                          <Link to="/ethical-workplace" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                            <div className="text-sm font-medium leading-none">Ethical Workplace</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Our ethical and sustainable working environment
+                              Our sustainable and ethical working environment
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -234,17 +224,14 @@ const Navbar = () => {
               <Link to="/about" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
                 Who We Are
               </Link>
-              <Link to="/legacy" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
-                Our Legacy
+              <Link to="/who-we-are" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Our Experience
               </Link>
-              <Link to="/founder" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+              <Link to="/from-the-founder" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
                 From The Founder
               </Link>
-              <Link to="/awards" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
-                Awards & Achievements
-              </Link>
-              <Link to="/mission" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
-                Mission & Vision
+              <Link to="/certificates" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Certificates & Compliance
               </Link>
             </div>
           </details>
@@ -282,8 +269,8 @@ const Navbar = () => {
               <Link to="/manufacturing" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
                 Manufacturing
               </Link>
-              <Link to="/workplace" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
-                Workplace
+              <Link to="/ethical-workplace" className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5" onClick={closeMobileMenu}>
+                Ethical Workplace
               </Link>
             </div>
           </details>
