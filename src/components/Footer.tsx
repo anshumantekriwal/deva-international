@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  return <footer className="text-white pt-16 pb-8 bg-leather-black">
+  
+  return (
+    <footer className="text-white pt-16 pb-8 bg-leather-black">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Logo and About */}
@@ -141,6 +144,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
