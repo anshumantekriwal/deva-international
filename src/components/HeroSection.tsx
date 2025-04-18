@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { ChevronRight, Award, CheckCircle, Shield } from 'lucide-react';
 
 const images = [
-  'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=2000&q=80',
-  '/lovable-uploads/bbb5b631-e5b1-4652-b2b3-8b3bf054a430.png'
+  '/lovable-uploads/4da47064-5fc2-4653-be84-e6536dc3e366.png',
+  '/lovable-uploads/80887948-e9cd-4507-85f5-0f79f6632f5e.png'
 ];
 
 const certifications = [{
