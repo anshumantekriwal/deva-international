@@ -1,10 +1,11 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight, Award, CheckCircle, Shield } from 'lucide-react';
 
 const images = [
   'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=2000&q=80',
-  '/lovable-uploads/509cedfc-579f-465c-bac9-11534b76820b.png'
+  '/lovable-uploads/bbb5b631-e5b1-4652-b2b3-8b3bf054a430.png'
 ];
 
 const certifications = [{
