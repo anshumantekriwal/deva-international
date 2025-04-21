@@ -11,7 +11,7 @@ const productCollections = [
     description:
       "Exquisite handcrafted leather handbags for the modern professional",
     theme: "bg-gradient-to-br from-leather-tan/30 to-leather-light/10",
-    featuredImage: "src/images/PLB1.JPG",
+    featuredImage: "images/PLB1.JPG",
     path: "/products/premium-handbags",
   },
   {
@@ -19,7 +19,7 @@ const productCollections = [
     name: "Leather Wallets",
     description: "Classic and contemporary wallet designs for all occasions",
     theme: "bg-gradient-to-br from-amber-100/50 to-amber-50/30",
-    featuredImage: "src/images/LW 1.JPG",
+    featuredImage: "images/LW 1.JPG",
     path: "/products/leather-wallets",
   },
   {
@@ -27,7 +27,7 @@ const productCollections = [
     name: "Accessories",
     description: "Complement your style with our premium leather accessories",
     theme: "bg-gradient-to-br from-slate-100/50 to-blue-50/30",
-    featuredImage: "src/images/A 1.JPG",
+    featuredImage: "images/A 1.JPG",
     path: "/products/accessories",
   },
 ];

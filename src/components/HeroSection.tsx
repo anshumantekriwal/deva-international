@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight, Award, CheckCircle, Shield } from "lucide-react";
 
-const images = ["src/images/A62_0646.JPG", "src/images/A62_0646.JPG"];
+const images = ["/images/A62_0646.JPG", "/images/A62_0646.JPG"];
 
 const certifications = [
   {
@@ -95,7 +95,7 @@ const HeroSection = () => {
             className="absolute inset-0"
           />
         ))}
-        <div className="absolute inset-0 bg-black/20" />{" "}
+        <div className="absolute inset-0 bg-black/40" />{" "}
         {/* Overlay for better text readability */}
       </div>
 

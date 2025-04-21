@@ -9,7 +9,7 @@ const events = [
     date: "February 13-15, 2025",
     description:
       "Showcased our premium leather collection at one of Europe's most prestigious leather exhibitions.",
-    image: "src/images/MIPEL.jpeg",
+    image: "images/MIPEL.jpeg",
   },
 ];
 

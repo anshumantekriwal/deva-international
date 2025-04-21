@@ -221,7 +221,7 @@ const Products = () => {
                   </div>
                   <div className="relative rounded-lg overflow-hidden shadow-lg">
                     <img
-                      src="src/images/A62_0403.JPG"
+                      src="images/A62_0403.JPG"
                       alt="Custom leather crafting process"
                       className="w-full h-auto object-cover"
                     />

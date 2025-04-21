@@ -14,21 +14,21 @@ const handbagCollections = [
     name: "Backpacks",
     description:
       "Functional yet stylish backpacks, perfect for professionals and travelers alike.",
-    imageUrl: "/src/images/PLB1.JPG",
+    imageUrl: "/images/PLB1.JPG",
   },
   {
     id: 2,
     name: "Hand Bags",
     description:
       "Handcrafted leather handbags with timeless elegance and refined style, ideal for both formal and casual settings.",
-    imageUrl: "/src/images/PLB 2.jpg",
+    imageUrl: "/images/PLB 2.jpg",
   },
   {
     id: 3,
     name: "Other Segments",
     description:
       "From leather waist bags to crossbody and sling styles, includes unique, fashion-forward designs to complement any look.",
-    imageUrl: "/src/images/PLB 3.jpg",
+    imageUrl: "/images/PLB 3.jpg",
   },
 ];
 
@@ -87,7 +87,7 @@ const ProductsHandbags = () => {
               <div className="order-1 md:order-2 relative">
                 <div className="relative overflow-hidden rounded-lg shadow-xl">
                   <img
-                    src="/src/images/PLB 4.jpg"
+                    src="/images/PLB 4.jpg"
                     alt="Premium leather bags collection"
                     className="w-full h-auto object-cover"
                   />
@@ -177,7 +177,7 @@ const ProductsHandbags = () => {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative rounded-lg overflow-hidden shadow-lg">
                   <img
-                    src="/src/images/A62_0560.JPG"
+                    src="/images/A62_0560.JPG"
                     alt="Leather bag craftsmanship"
                     className="w-full h-auto object-cover"
                   />

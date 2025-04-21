@@ -11,7 +11,7 @@ const blogPosts = [
     excerpt:
       "Explore how we combine centuries-old leather tanning methods with innovative approaches to create sustainable, premium quality products.",
     date: "2023-05-15",
-    imageUrl: "src/images/A62_0521.JPG",
+    imageUrl: "images/A62_0521.JPG",
     readTime: "5 min read",
   },
   {
@@ -20,7 +20,7 @@ const blogPosts = [
     excerpt:
       "Follow the fascinating process of transforming raw leather into beautifully crafted bags, from selection of materials to final stitching.",
     date: "2023-04-22",
-    imageUrl: "src/images/A62_0532.JPG",
+    imageUrl: "images/A62_0532.JPG",
     readTime: "7 min read",
   },
   {
@@ -30,7 +30,7 @@ const blogPosts = [
     excerpt:
       "Learn about our environmentally conscious approaches to leather manufacturing and how we're reducing our ecological footprint.",
     date: "2023-03-10",
-    imageUrl: "src/images/A62_0403.JPG",
+    imageUrl: "images/A62_0403.JPG",
     readTime: "6 min read",
   },
 ];

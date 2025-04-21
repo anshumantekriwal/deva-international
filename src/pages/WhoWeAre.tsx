@@ -57,7 +57,7 @@ const WhoWeArePage = () => {
               <div className="relative">
                 <div className="absolute -inset-4 md:-inset-6 bg-leather/10 rounded-xl -z-10 transform -rotate-2"></div>
                 <img
-                  src="src/images/A62_0646.JPG"
+                  src="images/A62_0646.JPG"
                   alt="32+ years of leather craftsmanship"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />

@@ -14,14 +14,14 @@ const walletCollections = [
     name: "Men's Wallets",
     description:
       "Explore premium collection of men’s wallets, including bifolds, slim card holders, and leather travel wallets. Designed for professionals, built for longevity.",
-    imageUrl: "/src/images/LW 1.jpg",
+    imageUrl: "/images/LW 1.jpg",
   },
   {
     id: 2,
     name: "Women's Wallets",
     description:
-      "Explore elegant range of women’s wallets blends fashion with function—featuring sleek silhouettes, smart compartments, and luxurious detailing.",
-    imageUrl: "/src/images/LW 2.jpg",
+      "Explore elegant range of women's wallets blends fashion with function—featuring sleek silhouettes, smart compartments, and luxurious detailing.",
+    imageUrl: "/images/LW 2.jpg",
   },
 ];
 
@@ -78,7 +78,7 @@ const ProductsWallets = () => {
               <div className="order-1 md:order-2 relative">
                 <div className="relative overflow-hidden rounded-lg shadow-xl">
                   <img
-                    src="/src/images/A62_0502.JPG"
+                    src="/images/A62_0502.JPG"
                     alt="Premium leather wallets collection"
                     className="w-full h-auto object-cover"
                   />
@@ -220,7 +220,7 @@ const ProductsWallets = () => {
                 </div>
                 <div className="relative rounded-lg overflow-hidden shadow-lg">
                   <img
-                    src="/src/images/A62_0535.JPG"
+                    src="/images/A62_0535.JPG"
                     alt="Wallet craftsmanship"
                     className="w-full h-auto object-cover"
                   />

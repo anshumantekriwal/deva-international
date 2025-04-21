@@ -18,7 +18,7 @@ const LegacyContent = () => {
           <div className="relative">
             <div className="relative rounded-xl overflow-hidden">
               <img
-                src="src/images/A62_0598.JPG"
+                src="images/A62_0598.JPG"
                 alt="Leather workshop with skilled artisans"
                 className="w-full h-auto object-cover"
               />

@@ -29,7 +29,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img
-                src="src/images/logo.png"
+                src="images/logo.png"
                 alt="Deva International Exim Pvt Ltd"
                 className="h-11 w-auto"
               />

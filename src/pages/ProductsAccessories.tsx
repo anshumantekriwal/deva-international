@@ -14,21 +14,21 @@ const accessoryCollections = [
     name: "Office Essentials",
     description:
       "Sophisticated leather accessories crafted for professional environments",
-    imageUrl: "/src/images/A62_0415.JPG",
+    imageUrl: "/images/A62_0415.JPG",
   },
   {
     id: 2,
     name: "Travel Essentials",
     description:
       "Stylish and secure travel accessories like passport holders, Ideal for brands targeting mobility and elegance.",
-    imageUrl: "/src/images/A62_0506.JPG",
+    imageUrl: "/images/A62_0506.JPG",
   },
   {
     id: 3,
     name: "Lifestyle Essentials",
     description:
       "A curated mix of handmade leather accessories, tailored for utility and brand expression.",
-    imageUrl: "/src/images/A62_0424.JPG",
+    imageUrl: "/images/A62_0424.JPG",
   },
 ];
 
@@ -85,7 +85,7 @@ const ProductsAccessories = () => {
               <div className="order-1 md:order-2 relative">
                 <div className="relative overflow-hidden rounded-lg shadow-xl">
                   <img
-                    src="/src/images/A62_0517.JPG"
+                    src="/images/A62_0517.JPG"
                     alt="Premium leather accessories"
                     className="w-full h-auto object-cover"
                   />
@@ -175,7 +175,7 @@ const ProductsAccessories = () => {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative rounded-lg overflow-hidden shadow-lg order-2 md:order-1">
                   <img
-                    src="/src/images/A62_0576.JPG"
+                    src="/images/A62_0576.JPG"
                     alt="Leather accessories as gifts"
                     className="w-full h-auto object-cover"
                   />
