@@ -1,53 +1,59 @@
-
-import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 // Updated product collections with our three main categories
 const productCollections = [
   {
     id: 1,
     name: "Premium Handbags",
-    description: "Exquisite handcrafted leather handbags for the modern professional",
+    description:
+      "Exquisite handcrafted leather handbags for the modern professional",
     theme: "bg-gradient-to-br from-leather-tan/30 to-leather-light/10",
-    featuredImage: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&h=800&q=80",
-    path: "/products/premium-handbags"
+    featuredImage: "src/images/PLB1.JPG",
+    path: "/products/premium-handbags",
   },
   {
     id: 2,
     name: "Leather Wallets",
     description: "Classic and contemporary wallet designs for all occasions",
     theme: "bg-gradient-to-br from-amber-100/50 to-amber-50/30",
-    featuredImage: "https://images.unsplash.com/photo-1548863227-3af567fc3b27?auto=format&fit=crop&w=800&h=800&q=80",
-    path: "/products/leather-wallets"
+    featuredImage: "src/images/LW 1.JPG",
+    path: "/products/leather-wallets",
   },
   {
     id: 3,
     name: "Accessories",
     description: "Complement your style with our premium leather accessories",
     theme: "bg-gradient-to-br from-slate-100/50 to-blue-50/30",
-    featuredImage: "https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=800&h=800&q=80",
-    path: "/products/accessories"
-  }
+    featuredImage: "src/images/A 1.JPG",
+    path: "/products/accessories",
+  },
 ];
 
-const CollectionCard = ({ collection }: { collection: typeof productCollections[0] }) => {
+const CollectionCard = ({
+  collection,
+}: {
+  collection: (typeof productCollections)[0];
+}) => {
   const navigate = useNavigate();
-  
+
   return (
     <Card className={`overflow-hidden h-full ${collection.theme}`}>
       <div className="relative overflow-hidden h-72">
-        <img 
-          src={collection.featuredImage} 
-          alt={collection.name} 
+        <img
+          src={collection.featuredImage}
+          alt={collection.name}
           className="w-full h-full object-cover transition-transform hover:scale-105 duration-700"
         />
       </div>
       <CardContent className="p-6">
-        <h3 className="text-2xl font-serif font-medium mb-2 text-leather-dark">{collection.name}</h3>
+        <h3 className="text-2xl font-serif font-medium mb-2 text-leather-dark">
+          {collection.name}
+        </h3>
         <p className="text-leather-dark/70 mb-6">{collection.description}</p>
-        <button 
+        <button
           onClick={() => navigate(collection.path)}
           className="btn-primary inline-flex items-center group"
         >
@@ -85,12 +91,12 @@ const ProductShowcase = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="bg-white py-20 relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-subtle-grain opacity-10" />
-      
+
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-14">
           <span className="inline-block px-4 py-1 mb-4 bg-leather/10 rounded-full">
@@ -98,14 +104,21 @@ const ProductShowcase = () => {
               EXQUISITE CRAFTSMANSHIP
             </p>
           </span>
-          <h2 className="section-title text-leather-dark">Our Product Categories</h2>
+          <h2 className="section-title text-leather-dark">
+            Featured Collection
+          </h2>
           <p className="text-leather-dark/70 text-lg max-w-2xl mx-auto">
-            Explore our diverse range of premium handcrafted leather goods. 
-            Each category represents our commitment to exceptional materials and meticulous attention to detail.
+            Explore our curated range of premium leather bags, wallets, and
+            accessories, crafted for fashion enthusiasts seeking excellence and
+            style.
           </p>
         </div>
-        
-        <div className={`transition-all duration-700 ease-out delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+
+        <div
+          className={`transition-all duration-700 ease-out delay-300 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {productCollections.map((collection) => (
               <CollectionCard key={collection.id} collection={collection} />

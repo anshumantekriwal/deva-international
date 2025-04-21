@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Clock, Search, BookOpen, Tag, User, Calendar } from 'lucide-react';
@@ -77,6 +78,17 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Blogs on Leather Good and Fashion | Deva International EXIM</title>
+        <meta 
+          name="description" 
+          content="Explore the latest leather goods industry insight, news, craftsmanship insight, and sustainable leather trends on Deva International's fashion accessories blog."
+        />
+        <meta 
+          name="keywords" 
+          content="leather goods blog, leather fashion blog, leather goods industry news, leather craftsmanship insights, sustainable leather trends"
+        />
+      </Helmet>
       <Navbar />
       
       <main className="pt-24 pb-20">

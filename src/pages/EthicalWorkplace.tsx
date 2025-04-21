@@ -13,10 +13,14 @@ const EthicalWorkplacePage = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Ethical Workplace | Deva International</title>
+        <title>Ethical Workplace & Compliance | Deva International EXIM</title>
         <meta 
           name="description" 
-          content="Discover Deva International's commitment to ethical workplace practices, employee wellbeing, and sustainable manufacturing."
+          content="Deva International EXIM Pvt. Ltd. ensures an ethical working environment with fair conditions, worker benefits, and strict work ethics and compliance standards."
+        />
+        <meta 
+          name="keywords" 
+          content="ethical working environment, ethical working conditions, ethical responsibilities, ethics and compliance, worker benefits"
         />
       </Helmet>
       

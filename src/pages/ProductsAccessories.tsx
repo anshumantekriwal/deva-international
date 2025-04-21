@@ -1,33 +1,35 @@
-
-import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, ArrowRight } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
+import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 // Sample accessories collections
 const accessoryCollections = [
   {
     id: 1,
-    name: "Belts & Straps",
-    description: "Premium leather belts and straps for any occasion",
-    imageUrl: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&h=600&q=80"
+    name: "Office Essentials",
+    description:
+      "Sophisticated leather accessories crafted for professional environments",
+    imageUrl: "/src/images/A62_0415.JPG",
   },
   {
     id: 2,
-    name: "Travel Accessories",
-    description: "Elegant and functional travel companions",
-    imageUrl: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&h=600&q=80"
+    name: "Travel Essentials",
+    description:
+      "Stylish and secure travel accessories like passport holders, Ideal for brands targeting mobility and elegance.",
+    imageUrl: "/src/images/A62_0506.JPG",
   },
   {
     id: 3,
-    name: "Office Essentials",
-    description: "Sophisticated accessories for your workspace",
-    imageUrl: "https://images.unsplash.com/photo-1533654824058-7010cca5bfc8?auto=format&fit=crop&w=800&h=600&q=80"
-  }
+    name: "Lifestyle Essentials",
+    description:
+      "A curated mix of handmade leather accessories, tailored for utility and brand expression.",
+    imageUrl: "/src/images/A62_0424.JPG",
+  },
 ];
 
 const ProductsAccessories = () => {
@@ -37,21 +39,25 @@ const ProductsAccessories = () => {
 
   const handleViewCatalog = () => {
     // This will be replaced with the actual DocSend link later
-    window.open('https://www.docsend.com/catalog-link', '_blank');
+    window.open("https://www.docsend.com/catalog-link", "_blank");
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Leather Accessories | Deva International</title>
-        <meta 
-          name="description" 
-          content="Browse our collection of premium leather accessories - handcrafted with precision and designed to complement your style."
+        <title>Luxury Leather Accessories | Deva International EXIM</title>
+        <meta
+          name="description"
+          content="Explore handmade and custom leather accessories. As a trusted leather accessories manufacturer & supplier, Deva International delivers premium quality and craftsmanship."
+        />
+        <meta
+          name="keywords"
+          content="leather accessories, leather wallet accessories, luxury leather accessories, handmade leather accessories, custom leather accessories, leather accessories supplier"
         />
       </Helmet>
-      
+
       <Navbar />
-      
+
       <main className="pt-24 pb-20">
         {/* Hero Section */}
         <section className="relative bg-leather-cream overflow-hidden">
@@ -63,12 +69,13 @@ const ProductsAccessories = () => {
                   Premium Leather Accessories
                 </h1>
                 <p className="text-lg text-leather-dark/80 mb-8 max-w-lg">
-                  Complete your style with our collection of meticulously crafted leather accessories, 
-                  designed to add a touch of elegance to your everyday life.
+                  Complete your style with our collection of meticulously
+                  crafted leather accessories, designed to add a touch of
+                  elegance to your everyday life.
                 </p>
-                <Button 
+                <Button
                   onClick={handleViewCatalog}
-                  size="lg" 
+                  size="lg"
                   className="bg-leather hover:bg-leather-dark group"
                 >
                   View Full Catalog
@@ -77,9 +84,9 @@ const ProductsAccessories = () => {
               </div>
               <div className="order-1 md:order-2 relative">
                 <div className="relative overflow-hidden rounded-lg shadow-xl">
-                  <img 
-                    src="https://images.unsplash.com/photo-1577733966973-d680bffd2e80?auto=format&fit=crop&w=1000&h=800&q=80" 
-                    alt="Premium leather accessories" 
+                  <img
+                    src="/src/images/A62_0517.JPG"
+                    alt="Premium leather accessories"
                     className="w-full h-auto object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
@@ -88,25 +95,30 @@ const ProductsAccessories = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Accessories Collections Section */}
         <section className="py-16 md:py-20 bg-white">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-serif font-semibold tracking-tight text-leather-dark mb-4">
-                Our Accessories Collections
+                Accessories Collections{" "}
               </h2>
               <p className="text-lg text-leather-dark/70">
-                From essential everyday items to luxury pieces, our accessories are designed to enhance your lifestyle.
+                From functional designs to refined lifestyle essentials, our
+                range of leather accessories is crafted to elevate everyday
+                experiences
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {accessoryCollections.map((collection) => (
-                <Card key={collection.id} className="overflow-hidden shadow-lg group h-full">
+                <Card
+                  key={collection.id}
+                  className="overflow-hidden shadow-lg group h-full"
+                >
                   <div className="relative h-72 overflow-hidden">
-                    <img 
-                      src={collection.imageUrl} 
+                    <img
+                      src={collection.imageUrl}
                       alt={collection.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -116,10 +128,12 @@ const ProductsAccessories = () => {
                     </h3>
                   </div>
                   <CardContent className="p-6">
-                    <p className="text-leather-dark/80 mb-6">{collection.description}</p>
-                    <Button 
+                    <p className="text-leather-dark/80 mb-6">
+                      {collection.description}
+                    </p>
+                    <Button
                       onClick={handleViewCatalog}
-                      variant="outline" 
+                      variant="outline"
                       className="text-leather hover:text-white hover:bg-leather border-leather"
                     >
                       View Collection
@@ -128,11 +142,11 @@ const ProductsAccessories = () => {
                 </Card>
               ))}
             </div>
-            
+
             <div className="mt-12 text-center">
-              <Button 
+              <Button
                 onClick={handleViewCatalog}
-                size="lg" 
+                size="lg"
                 className="bg-leather hover:bg-leather-dark group"
               >
                 View Full Catalog
@@ -141,7 +155,7 @@ const ProductsAccessories = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Gift Ideas Section */}
         <section className="py-16 md:py-20 bg-leather-cream/20">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6">
@@ -152,48 +166,67 @@ const ProductsAccessories = () => {
                 </h2>
                 <Separator className="mx-auto w-24 h-0.5 bg-leather mb-6" />
                 <p className="text-lg text-leather-dark/70">
-                  Our accessories make thoughtful and lasting gifts for any occasion.
+                  Our leather accessories combine timeless appeal with
+                  customization, making them perfect for thoughtful, lasting
+                  gifts.
                 </p>
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative rounded-lg overflow-hidden shadow-lg order-2 md:order-1">
-                  <img 
-                    src="https://images.unsplash.com/photo-1607438608672-946e50eff68f?auto=format&fit=crop&w=800&h=600&q=80" 
-                    alt="Leather accessories as gifts" 
+                  <img
+                    src="/src/images/A62_0576.JPG"
+                    alt="Leather accessories as gifts"
                     className="w-full h-auto object-cover"
                   />
                 </div>
                 <div className="order-1 md:order-2">
                   <h3 className="text-2xl font-serif font-medium text-leather-dark mb-4">
-                    Timeless Gifts That Leave an Impression
+                    Timeless Gifts with a Personalized Touch{" "}
                   </h3>
                   <p className="text-leather-dark/80 mb-6">
-                    Whether for a birthday, anniversary, or corporate gifting, our leather accessories offer a perfect blend of practicality and luxury. Each piece can be personalized with monograms or custom designs.
+                    Whether you're sourcing for a corporate gifting program,
+                    retail collection, or exclusive promotional campaign, our
+                    custom leather accessories offer an elegant blend of
+                    craftsmanship and brand alignment. We help you create gifts
+                    that feel premium—and personal.
+                    <br />
+                    <br />
+                    From monogrammed leather goods to curated gift sets, Deva
+                    International offers scalable solutions that elevate your
+                    brand experience.
                   </p>
                   <ul className="space-y-4 mb-6">
                     <li className="flex items-start">
-                      <span className="text-leather mr-3 mt-1"><ArrowRight size={16} /></span>
-                      <span className="text-leather-dark/80">Custom monogramming and personalization options</span>
+                      <span className="text-leather mr-3 mt-1">
+                        <ArrowRight size={16} />
+                      </span>
+                      <span className="text-leather-dark/80">
+                        Custom monogramming and logo embossing available{" "}
+                      </span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-leather mr-3 mt-1"><ArrowRight size={16} /></span>
-                      <span className="text-leather-dark/80">Elegant gift packaging available</span>
+                      <span className="text-leather mr-3 mt-1">
+                        <ArrowRight size={16} />
+                      </span>
+                      <span className="text-leather-dark/80">
+                        Elegant gift-ready packaging for retail or premium use{" "}
+                      </span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-leather mr-3 mt-1"><ArrowRight size={16} /></span>
-                      <span className="text-leather-dark/80">Corporate bulk orders with custom branding</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-leather mr-3 mt-1"><ArrowRight size={16} /></span>
-                      <span className="text-leather-dark/80">Gift cards and curated gift sets</span>
+                      <span className="text-leather mr-3 mt-1">
+                        <ArrowRight size={16} />
+                      </span>
+                      <span className="text-leather-dark/80">
+                        Bulk gifting with personalized branding for corporates{" "}
+                      </span>
                     </li>
                   </ul>
-                  <Button 
+                  <Button
                     onClick={handleViewCatalog}
                     className="bg-leather hover:bg-leather-dark group"
                   >
-                    Explore Gift Options
+                    Contact Us to Know More{" "}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
@@ -202,7 +235,7 @@ const ProductsAccessories = () => {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );
