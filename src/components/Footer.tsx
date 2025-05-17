@@ -1,9 +1,16 @@
-import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Instagram,
+  Facebook,
+  Linkedin,
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="text-white pt-16 pb-8 bg-leather-black">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
@@ -20,19 +27,34 @@ const Footer = () => {
                 </span>
               </Link>
               <p className="text-sm text-gray-300 mb-6">
-                Crafting premium leather goods with passion and precision since 1995.
-                Over 32 years of excellence in leather craftsmanship.
+                Crafting premium leather goods with passion and precision since
+                1993. Over 32 years of excellence in leather craftsmanship.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-300 hover:text-leather-light transition-colors">
+                <a
+                  href="https://www.instagram.com/devaintlexim/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-leather-light transition-colors"
+                >
                   <Instagram size={20} />
                   <span className="sr-only">Instagram</span>
                 </a>
-                <a href="#" className="text-gray-300 hover:text-leather-light transition-colors">
+                <a
+                  href="https://www.facebook.com/devainternationalexim"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-leather-light transition-colors"
+                >
                   <Facebook size={20} />
                   <span className="sr-only">Facebook</span>
                 </a>
-                <a href="#" className="text-gray-300 hover:text-leather-light transition-colors">
+                <a
+                  href="https://www.linkedin.com/company/deva-international-exim-pvt-ltd/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-leather-light transition-colors"
+                >
                   <Linkedin size={20} />
                   <span className="sr-only">LinkedIn</span>
                 </a>
@@ -45,27 +67,42 @@ const Footer = () => {
             <h3 className="text-lg font-medium mb-6 font-serif">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
+                <Link
+                  to="/"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
+                <Link
+                  to="/about"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
+                <Link
+                  to="/products"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                >
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/quality-control" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
+                <Link
+                  to="/quality-control"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                >
                   Quality Control
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
+                <Link
+                  to="/contact"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -77,25 +114,41 @@ const Footer = () => {
             <h3 className="text-lg font-medium mb-6 font-serif">Products</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/products/premium-handbags" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
+                <Link
+                  to="/products/premium-handbags"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                >
                   Premium Handbags
                 </Link>
               </li>
               <li>
-                <Link to="/products/leather-wallets" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
+                <Link
+                  to="/products/leather-wallets"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                >
                   Leather Wallets
                 </Link>
               </li>
               <li>
-                <Link to="/products/accessories" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
+                <Link
+                  to="/products/accessories"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                >
                   Accessories
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-gray-300 hover:text-leather-light transition-colors" onClick={e => {
-                e.preventDefault();
-                window.open('https://www.docsend.com/catalog-link', '_blank');
-              }}>
+                <a
+                  href="#"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(
+                      "https://www.docsend.com/catalog-link",
+                      "_blank"
+                    );
+                  }}
+                >
                   View Full Catalog
                 </a>
               </li>
@@ -109,19 +162,27 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-leather-light mr-3 mt-0.5" />
                 <span className="text-sm text-gray-300">
-                  123 Leather Lane, Craftsville<br />Industrial Zone, 560001
+                  37/2, Topsia Rd, Uttar Panchanna Gram
+                  <br />
+                  Kolkata, West Bengal 700100
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-leather-light mr-3" />
-                <a href="tel:+911234567890" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
-                  +91 123 456 7890
+                <a
+                  href="tel:+919830262910"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                >
+                  +91-983-026-2910
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-leather-light mr-3" />
-                <a href="mailto:info@devainternational.com" className="text-sm text-gray-300 hover:text-leather-light transition-colors">
-                  info@devainternational.com
+                <a
+                  href="mailto:deva@devainternational.com"
+                  className="text-sm text-gray-300 hover:text-leather-light transition-colors"
+                >
+                  deva@devainternational.com
                 </a>
               </li>
             </ul>
@@ -134,10 +195,16 @@ const Footer = () => {
               © {currentYear} Deva International. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-sm text-gray-400 hover:text-leather-light transition-colors">
+              <a
+                href="#"
+                className="text-sm text-gray-400 hover:text-leather-light transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-gray-400 hover:text-leather-light transition-colors">
+              <a
+                href="#"
+                className="text-sm text-gray-400 hover:text-leather-light transition-colors"
+              >
                 Terms of Service
               </a>
             </div>

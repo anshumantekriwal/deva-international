@@ -45,9 +45,9 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-medium text-leather-dark">Address</h3>
                       <p className="text-leather-dark/70 mt-1">
-                        123 Leather Lane, Craftsville<br />
-                        Industrial Zone, 560001<br />
-                        Karnataka, India
+                        37/2, Topsia Rd, Uttar Panchanna Gram<br />
+                        Kolkata, West Bengal 700100<br />
+                        India
                       </p>
                     </div>
                   </div>
@@ -57,8 +57,8 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-medium text-leather-dark">Phone</h3>
                       <p className="text-leather-dark/70 mt-1">
-                        <a href="tel:+911234567890" className="hover:text-leather transition-colors">
-                          +91 123 456 7890
+                        <a href="tel:+919830262910" className="hover:text-leather transition-colors">
+                          +91-983-026-2910
                         </a>
                       </p>
                     </div>
@@ -69,8 +69,8 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-medium text-leather-dark">Email</h3>
                       <p className="text-leather-dark/70 mt-1">
-                        <a href="mailto:info@devainternational.com" className="hover:text-leather transition-colors">
-                          info@devainternational.com
+                        <a href="mailto:deva@devainternational.com" className="hover:text-leather transition-colors">
+                          deva@devainternational.com
                         </a>
                       </p>
                     </div>
@@ -80,8 +80,7 @@ const ContactPage = () => {
                 <div className="mt-12">
                   <h2 className="text-2xl font-serif font-medium mb-6 text-leather-dark">Business Hours</h2>
                   <div className="space-y-2 text-leather-dark/70">
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday: 10:00 AM - 4:00 PM</p>
+                    <p>Monday - Saturday: 10:00 AM - 07:00 PM</p>
                     <p>Sunday: Closed</p>
                   </div>
                 </div>
@@ -99,7 +98,7 @@ const ContactPage = () => {
               <h2 className="text-2xl font-serif font-medium mb-6 text-leather-dark">Our Location</h2>
               <div className="h-96 w-full rounded-lg overflow-hidden border border-gray-200">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9898913621704!2d77.59791857485618!3d12.97174081681458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae167776021abf%3A0xaec88e5647e7946b!2sCentral%20Business%20District%2C%20Bengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1712343843557!5m2!1sen!2sus" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.1118869054713!2d88.38895987583826!3d22.51972457897073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02774618bd6c31%3A0xf07858bf6731018a!2sDeva%20International%20Exim%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1716868795506!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
