@@ -56,11 +56,6 @@ const FromTheFounderPage = () => {
               <div className="lg:order-2">
                 <div className="relative">
                   <div className="absolute -inset-4 md:-inset-6 bg-leather/10 rounded-xl -z-10 transform rotate-2"></div>
-                  <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
-                    alt="Rajiv Sharma, Founder of Deva International"
-                    className="w-full h-auto rounded-lg shadow-lg"
-                  />
                 </div>
               </div>
 
@@ -127,7 +122,7 @@ const FromTheFounderPage = () => {
 
                 <div className="relative z-10 space-y-6 text-lg text-leather-dark/80 font-serif">
                   <p>
-                    When I founded Deva International in 1991, I had a clear
+                    When I founded Deva International in 1993, I had a clear
                     vision: to create leather products of exceptional quality
                     that would stand the test of time, both in terms of
                     durability and design.

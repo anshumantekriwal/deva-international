@@ -3,8 +3,11 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Award, Globe, Users, MapPin, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const WhoWeArePage = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -57,15 +60,15 @@ const WhoWeArePage = () => {
               <div className="relative">
                 <div className="absolute -inset-4 md:-inset-6 bg-leather/10 rounded-xl -z-10 transform -rotate-2"></div>
                 <img
-                  src="images/A62_0646.JPG"
-                  alt="32+ years of leather craftsmanship"
+                  src="images/company-heritage-manufacturing.jpg"
+                  alt="31+ years of leather craftsmanship"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
 
                 <div className="absolute -bottom-8 -right-5 bg-white rounded-lg p-6 shadow-xl">
                   <div className="text-center">
                     <span className="block text-6xl font-serif font-bold text-leather">
-                      32+
+                      31+
                     </span>
                     <span className="text-leather-dark/70">
                       Years of Excellence
@@ -87,7 +90,7 @@ const WhoWeArePage = () => {
 
                 <div className="space-y-4 text-leather-dark/80">
                   <p className="text-lg">
-                    Since our establishment in 1991, Deva International has been
+                    Since our establishment in 1993, Deva International has been
                     at the forefront of leather goods manufacturing, combining
                     traditional craftsmanship with innovative techniques to
                     create products of exceptional quality.
@@ -186,7 +189,10 @@ const WhoWeArePage = () => {
             </div>
 
             <div className="mt-12 text-center">
-              <button className="btn-secondary inline-flex items-center group">
+              <button
+                onClick={() => navigate("/manufacturing")}
+                className="btn-secondary inline-flex items-center group"
+              >
                 Learn More About Our Process
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>

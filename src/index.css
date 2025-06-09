@@ -1,24 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap");
 
 @font-face {
-  font-family: 'CircularStd';
-  src: url('https://db.onlinewebfonts.com/t/860c3ec7bbc5da3e97233ccecafe512e.woff2') format('woff2');
+  font-family: "CircularStd";
+  src: url("https://db.onlinewebfonts.com/t/860c3ec7bbc5da3e97233ccecafe512e.woff2")
+    format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CircularStd';
-  src: url('https://db.onlinewebfonts.com/t/961a181da27e7cbc072ec2fb5bbfb394.woff2') format('woff2');
+  font-family: "CircularStd";
+  src: url("https://db.onlinewebfonts.com/t/961a181da27e7cbc072ec2fb5bbfb394.woff2")
+    format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CircularStd';
-  src: url('https://db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.woff2') format('woff2');
+  font-family: "CircularStd";
+  src: url("https://db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.woff2")
+    format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -113,7 +116,12 @@
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif tracking-tight;
   }
 }
@@ -122,19 +130,19 @@
   .section-container {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
   }
-  
+
   .section-title {
     @apply text-3xl md:text-4xl font-serif font-semibold tracking-tight mb-6 md:mb-10;
   }
-  
+
   .section-subtitle {
     @apply text-xl md:text-2xl font-serif tracking-tight text-leather-dark mb-4;
   }
-  
+
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .text-pretty {
     text-wrap: pretty;
   }
@@ -156,11 +164,13 @@
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-leather text-white rounded-md font-medium transition-all duration-300 hover:bg-leather-dark focus:outline-none focus:ring-2 focus:ring-leather focus:ring-opacity-50;
+    @apply px-6 py-3 bg-leather text-white rounded-md font-medium transition-all duration-300 hover:bg-leather-dark focus:outline-none focus:ring-2 focus:ring-leather focus:ring-opacity-50 cursor-pointer relative z-10;
+    pointer-events: all;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-transparent border border-leather text-leather rounded-md font-medium transition-all duration-300 hover:bg-leather hover:text-white focus:outline-none focus:ring-2 focus:ring-leather focus:ring-opacity-50;
+    @apply px-6 py-3 bg-transparent border border-leather text-leather rounded-md font-medium transition-all duration-300 hover:bg-leather hover:text-white focus:outline-none focus:ring-2 focus:ring-leather focus:ring-opacity-50 cursor-pointer relative z-10;
+    pointer-events: all;
   }
 
   .text-gradient {
@@ -273,6 +283,11 @@
 }
 
 @keyframes shine {
-  0% { transform: translateX(-100%) rotate(30deg); }
-  20%, 100% { transform: translateX(300%) rotate(30deg); }
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  20%,
+  100% {
+    transform: translateX(300%) rotate(30deg);
+  }
 }

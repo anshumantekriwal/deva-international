@@ -152,8 +152,7 @@ export default {
         "background-pan": "background-pan 10s linear infinite",
       },
       backgroundImage: {
-        "leather-texture":
-          "url('/lovable-uploads/d62b6da9-2c5d-4284-9cf7-2bede616c2ea.png')",
+        "leather-texture": "url('/images/manufacturing-facility.png')",
         "subtle-grain":
           "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADcSURBVGhD7ZjBCoMwEERz6v9/Y1sQPFhQmOxusmZgLgNvXxLbbmt2xZl/AUzkV/5gyuMbzYzIHtpENBQ9ByZ2PpqjGNFQ9HxpYmJgYuejmVE/onbFmYmJaZcmZ/ZMMiOY2DP5jsTOOTOxmYk9k8zIYo3WvXI7cuH1jhQm9kwyI1dojbYXnpELLvQjjWYl6Nkck8wIJvZMMiNBz4HfLPVM0LM5JpkRTOyZZEYss2eUGcHEnklmxDJ7RpkRTOyZZEYss2c06Bkzk585zQyxZ5QZwcSeSWYk6Nkck8wIJvZM/oZt+wAbD2Hj3gNHiQAAAABJRU5ErkJggg==')",
       },

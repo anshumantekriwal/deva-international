@@ -14,14 +14,14 @@ const walletCollections = [
     name: "Men's Wallets",
     description:
       "Explore premium collection of men’s wallets, including bifolds, slim card holders, and leather travel wallets. Designed for professionals, built for longevity.",
-    imageUrl: "/images/LW 1.jpg",
+    imageUrl: "/images/premium-leather-wallets-collection-1.jpg",
   },
   {
     id: 2,
     name: "Women's Wallets",
     description:
       "Explore elegant range of women's wallets blends fashion with function—featuring sleek silhouettes, smart compartments, and luxurious detailing.",
-    imageUrl: "/images/LW 2.jpg",
+    imageUrl: "/images/premium-leather-wallets-collection-2.jpg",
   },
 ];
 
@@ -31,8 +31,10 @@ const ProductsWallets = () => {
   }, []);
 
   const handleViewCatalog = () => {
-    // This will be replaced with the actual DocSend link later
-    window.open("https://www.docsend.com/catalog-link", "_blank");
+    window.open(
+      "https://docsend.com/view/deva-international-catalog",
+      "_blank"
+    );
   };
 
   return (
@@ -78,7 +80,7 @@ const ProductsWallets = () => {
               <div className="order-1 md:order-2 relative">
                 <div className="relative overflow-hidden rounded-lg shadow-xl">
                   <img
-                    src="/images/A62_0502.JPG"
+                    src="/images/premium-wallet-hero.jpg"
                     alt="Premium leather wallets collection"
                     className="w-full h-auto object-cover"
                   />
@@ -171,7 +173,7 @@ const ProductsWallets = () => {
                   </h3>
                   <p className="text-leather-dark/80 mb-6">
                     Each wallet is designed with both aesthetics and
-                    functionality in mind. Our 32+ years of experience has
+                    functionality in mind. Our 31+ years of experience has
                     taught us to balance form with function, creating wallets
                     that are a joy to use every day.
                   </p>
@@ -220,7 +222,7 @@ const ProductsWallets = () => {
                 </div>
                 <div className="relative rounded-lg overflow-hidden shadow-lg">
                   <img
-                    src="/images/A62_0535.JPG"
+                    src="/images/wallet-craftsmanship-detail.jpg"
                     alt="Wallet craftsmanship"
                     className="w-full h-auto object-cover"
                   />

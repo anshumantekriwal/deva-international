@@ -28,7 +28,7 @@ const Footer = () => {
               </Link>
               <p className="text-sm text-gray-300 mb-6">
                 Crafting premium leather goods with passion and precision since
-                1993. Over 32 years of excellence in leather craftsmanship.
+                1993. Over 31 years of excellence in leather craftsmanship.
               </p>
               <div className="flex space-x-4">
                 <a
@@ -118,7 +118,7 @@ const Footer = () => {
                   to="/products/premium-handbags"
                   className="text-sm text-gray-300 hover:text-leather-light transition-colors"
                 >
-                  Premium Handbags
+                  Premium Leather Bags
                 </Link>
               </li>
               <li>
@@ -126,7 +126,7 @@ const Footer = () => {
                   to="/products/leather-wallets"
                   className="text-sm text-gray-300 hover:text-leather-light transition-colors"
                 >
-                  Leather Wallets
+                  Premium Leather Wallets
                 </Link>
               </li>
               <li>
@@ -134,20 +134,15 @@ const Footer = () => {
                   to="/products/accessories"
                   className="text-sm text-gray-300 hover:text-leather-light transition-colors"
                 >
-                  Accessories
+                  Leather Accessories
                 </Link>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://docsend.com/view/deva-international-catalog"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm text-gray-300 hover:text-leather-light transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(
-                      "https://www.docsend.com/catalog-link",
-                      "_blank"
-                    );
-                  }}
                 >
                   View Full Catalog
                 </a>
@@ -196,16 +191,20 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6">
               <a
-                href="#"
+                href="https://devainternational.medium.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-gray-400 hover:text-leather-light transition-colors"
               >
-                Privacy Policy
+                Blog
               </a>
               <a
-                href="#"
+                href="https://docsend.com/view/deva-international-catalog"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-gray-400 hover:text-leather-light transition-colors"
               >
-                Terms of Service
+                Catalog
               </a>
             </div>
           </div>

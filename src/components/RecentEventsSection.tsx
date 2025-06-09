@@ -9,7 +9,7 @@ const events = [
     date: "February 13-15, 2025",
     description:
       "Showcased our premium leather collection at one of Europe's most prestigious leather exhibitions.",
-    image: "images/MIPEL.jpeg",
+    image: "images/mipel-exhibition-event.jpeg",
   },
 ];
 
@@ -153,13 +153,6 @@ const RecentEventsSection = () => {
               style={{ width: `${((activeIndex + 1) / events.length) * 100}%` }}
             />
           </div>
-        </div>
-
-        <div className="text-center">
-          <button className="btn-secondary inline-flex items-center">
-            View All Events
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </button>
         </div>
       </div>
     </section>

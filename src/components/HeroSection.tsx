@@ -1,8 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight, Award, CheckCircle, Shield } from "lucide-react";
 
-const images = ["/images/A62_0646.JPG", "/images/A62_0646.JPG"];
+const images = [
+  "/images/company-heritage-manufacturing.jpg",
+  "/images/company-heritage-manufacturing.jpg",
+];
 
 const certifications = [
   {
@@ -52,6 +55,11 @@ const HeroSection = () => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!heroRef.current) return;
+
+      // Skip parallax if hovering over buttons
+      const target = e.target as HTMLElement;
+      if (target.closest("button")) return;
+
       const { clientX, clientY } = e;
       const { left, top, width, height } =
         heroRef.current.getBoundingClientRect();
@@ -99,7 +107,7 @@ const HeroSection = () => {
         {/* Overlay for better text readability */}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 z-10 mt-16 sm:mt-0">
+      <div className="container mx-auto px-4 sm:px-6 relative z-20 mt-16 sm:mt-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div
             className={`lg:col-span-8 lg:col-start-3 text-center transition-all duration-1000 ease-out ${
@@ -108,9 +116,9 @@ const HeroSection = () => {
                 : "opacity-100 translate-y-0"
             }`}
           >
-            <div className="inline-block px-4 py-1 mb-6 bg-leather-tan/20 backdrop-blur-sm rounded-full animate-pulse">
-              <p className="text-xs font-medium tracking-widest text-leather-darkbrown">
-                INTERNATIONALLY TRUSTED LEATHER GOODS SUPPLIER
+            <div className="inline-block px-4 py-1 mb-6 bg-leather-tan/20 backdrop-blur-sm rounded-full">
+              <p className="text-xs font-medium tracking-widest text-white font-bold">
+                INTERNATIONALLY TRUSTED • ISO CERTIFIED • SEDEX MEMBER
               </p>
             </div>
             <h1 className="text-4xl sm:text-5xl font-serif leading-tight text-balance mb-6 text-gradient text-leather-darkbrown font-semibold md:text-5xl">
@@ -149,7 +157,7 @@ const HeroSection = () => {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-4 justify-center relative z-30">
               <button
                 onClick={() => navigate("/products")}
                 className="btn-primary flex items-center group"

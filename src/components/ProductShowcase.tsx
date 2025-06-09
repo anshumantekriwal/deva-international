@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,27 +7,27 @@ import { Card, CardContent } from "@/components/ui/card";
 const productCollections = [
   {
     id: 1,
-    name: "Premium Handbags",
+    name: "Premium Leather Bags",
     description:
       "Exquisite handcrafted leather handbags for the modern professional",
     theme: "bg-gradient-to-br from-leather-tan/30 to-leather-light/10",
-    featuredImage: "images/PLB1.JPG",
+    featuredImage: "images/premium-leather-bags-collection-1.jpg",
     path: "/products/premium-handbags",
   },
   {
     id: 2,
-    name: "Leather Wallets",
+    name: "Premium Leather Wallets",
     description: "Classic and contemporary wallet designs for all occasions",
     theme: "bg-gradient-to-br from-amber-100/50 to-amber-50/30",
-    featuredImage: "images/LW 1.JPG",
+    featuredImage: "images/premium-leather-wallets-collection-1.jpg",
     path: "/products/leather-wallets",
   },
   {
     id: 3,
-    name: "Accessories",
+    name: "Leather Accessories",
     description: "Complement your style with our premium leather accessories",
     theme: "bg-gradient-to-br from-slate-100/50 to-blue-50/30",
-    featuredImage: "images/A 1.JPG",
+    featuredImage: "images/leather-accessories-collection-1.jpg",
     path: "/products/accessories",
   },
 ];

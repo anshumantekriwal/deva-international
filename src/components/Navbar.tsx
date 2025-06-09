@@ -151,7 +151,7 @@ const Navbar = () => {
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none">
-                              Premium Handbags
+                              Premium Leather Bags
                             </div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Exquisite handcrafted leather handbags for all
@@ -167,7 +167,7 @@ const Navbar = () => {
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none">
-                              Leather Wallets
+                              Premium Leather Wallets
                             </div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Classic and contemporary wallet designs
@@ -182,7 +182,7 @@ const Navbar = () => {
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none">
-                              Accessories
+                              Leather Accessories
                             </div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Complement your style with premium leather
@@ -347,21 +347,21 @@ const Navbar = () => {
                 className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5"
                 onClick={closeMobileMenu}
               >
-                Premium Handbags
+                Premium Leather Bags
               </Link>
               <Link
                 to="/products/leather-wallets"
                 className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5"
                 onClick={closeMobileMenu}
               >
-                Leather Wallets
+                Premium Leather Wallets
               </Link>
               <Link
                 to="/products/accessories"
                 className="block px-3 py-2 rounded-md text-sm text-leather-dark/70 hover:bg-leather-light/5"
                 onClick={closeMobileMenu}
               >
-                Accessories
+                Leather Accessories
               </Link>
             </div>
           </details>
@@ -396,6 +396,24 @@ const Navbar = () => {
             </div>
           </details>
 
+          <a
+            href="https://devainternational.medium.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-3 py-2 rounded-md text-base font-medium text-leather-dark hover:bg-leather-light/10"
+            onClick={closeMobileMenu}
+          >
+            Blog
+          </a>
+          <a
+            href="https://docsend.com/view/deva-international-catalog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-3 py-2 rounded-md text-base font-medium text-leather-dark hover:bg-leather-light/10"
+            onClick={closeMobileMenu}
+          >
+            Catalog
+          </a>
           <Link
             to="/contact"
             className="block px-3 py-2 rounded-md text-base font-medium text-leather-dark hover:bg-leather-light/10"

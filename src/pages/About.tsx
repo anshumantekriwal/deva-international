@@ -83,8 +83,8 @@ const AboutPage = () => {
                 <div className="relative">
                   <div className="absolute -inset-1 bg-leather-light/10 rounded-lg blur-xl"></div>
                   <img
-                    src="/lovable-uploads/d62b6da9-2c5d-4284-9cf7-2bede616c2ea.png"
-                    alt="Deva International manufacturing"
+                    src="/images/manufacturing-facility.png"
+                    alt="Deva International manufacturing facility"
                     className="relative rounded-lg shadow-lg w-full"
                   />
                 </div>

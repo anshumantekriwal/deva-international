@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -39,13 +40,17 @@ const productCategories = [
 ];
 
 const Products = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const handleViewCatalog = () => {
-    // This will be replaced with the actual DocSend link later
-    window.open("https://www.docsend.com/catalog-link", "_blank");
+    window.open(
+      "https://docsend.com/view/deva-international-catalog",
+      "_blank"
+    );
   };
 
   return (
@@ -144,7 +149,7 @@ const Products = () => {
                       {category.description}
                     </p>
                     <Button
-                      onClick={() => (window.location.href = category.path)}
+                      onClick={() => navigate(category.path)}
                       variant="outline"
                       className="text-leather hover:text-white hover:bg-leather border-leather"
                     >
@@ -215,13 +220,16 @@ const Products = () => {
                         <span>Scalable production with on-time delivery</span>
                       </li>
                     </ul>
-                    <Button className="bg-leather hover:bg-leather-dark">
+                    <Button
+                      className="bg-leather hover:bg-leather-dark"
+                      onClick={() => navigate("/contact")}
+                    >
                       Contact Us For Custom Orders
                     </Button>
                   </div>
                   <div className="relative rounded-lg overflow-hidden shadow-lg">
                     <img
-                      src="images/A62_0403.JPG"
+                      src="images/custom-leather-crafting-process.jpg"
                       alt="Custom leather crafting process"
                       className="w-full h-auto object-cover"
                     />

@@ -11,7 +11,7 @@ const blogPosts = [
     excerpt:
       "Explore how we combine centuries-old leather tanning methods with innovative approaches to create sustainable, premium quality products.",
     date: "2023-05-15",
-    imageUrl: "images/A62_0521.JPG",
+    imageUrl: "images/blog-preview-manufacturing.jpg",
     readTime: "5 min read",
   },
   {
@@ -20,7 +20,7 @@ const blogPosts = [
     excerpt:
       "Follow the fascinating process of transforming raw leather into beautifully crafted bags, from selection of materials to final stitching.",
     date: "2023-04-22",
-    imageUrl: "images/A62_0532.JPG",
+    imageUrl: "images/blog-preview-craftsmanship.jpg",
     readTime: "7 min read",
   },
   {
@@ -30,7 +30,7 @@ const blogPosts = [
     excerpt:
       "Learn about our environmentally conscious approaches to leather manufacturing and how we're reducing our ecological footprint.",
     date: "2023-03-10",
-    imageUrl: "images/A62_0403.JPG",
+    imageUrl: "images/custom-leather-crafting-process.jpg",
     readTime: "6 min read",
   },
 ];
@@ -63,7 +63,9 @@ const BlogCard = ({
       className={`bg-white rounded-lg shadow-md overflow-hidden transition-all duration-700 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
-      onClick={() => navigate("/blog")}
+      onClick={() =>
+        window.open("https://devainternational.medium.com", "_blank")
+      }
     >
       <div className="overflow-hidden">
         <img
@@ -122,7 +124,9 @@ const BlogPreview = () => {
 
         <div className="mt-12 text-center">
           <button
-            onClick={() => (window.location.href = "/blog")}
+            onClick={() =>
+              window.open("https://devainternational.medium.com", "_blank")
+            }
             className="btn-secondary inline-flex items-center"
           >
             View All Articles

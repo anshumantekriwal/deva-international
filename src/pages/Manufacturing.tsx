@@ -41,7 +41,7 @@ const ManufacturingPage = () => {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1631467895429-15d0f4644a3d?auto=format&fit=crop&w=1200&h=800&q=80')",
+                "url('/images/manufacturing-facility-production.jpg')",
             }}
           ></div>
 
@@ -79,7 +79,7 @@ const ManufacturingPage = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-leather/10 rounded-lg -z-10 transform -rotate-2"></div>
                   <img
-                    src="https://images.unsplash.com/photo-1620629228754-2a0145a67d88?auto=format&fit=crop&w=1200&h=800&q=80"
+                    src="/images/company-heritage-manufacturing.jpg"
                     alt="Deva International's main manufacturing facility"
                     className="w-full h-auto rounded-lg shadow-lg"
                   />
@@ -200,7 +200,7 @@ const ManufacturingPage = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-leather/10 rounded-lg -z-10 transform rotate-2"></div>
                   <img
-                    src="https://images.unsplash.com/photo-1607342656380-5e98d6cbe0e0?auto=format&fit=crop&w=1200&h=800&q=80"
+                    src="/images/artisan-craftsmanship-workshop.jpg"
                     alt="Deva International's specialty manufacturing center"
                     className="w-full h-auto rounded-lg shadow-lg"
                   />
@@ -210,6 +210,90 @@ const ManufacturingPage = () => {
                     </p>
                     <p className="text-sm text-leather-dark/70">
                       Established 2012 | 12,000 sq. ft.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Technology & Equipment */}
+        <section className="py-16 md:py-20 bg-leather-light/30">
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <span className="inline-block px-4 py-1 mb-4 bg-leather/10 rounded-full">
+                <p className="text-xs font-medium tracking-widest text-leather-dark">
+                  TECHNOLOGY & EQUIPMENT
+                </p>
+              </span>
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-leather-dark mb-6">
+                Advanced Manufacturing Technology
+              </h2>
+              <p className="text-lg text-leather-dark/80">
+                Our investment in cutting-edge technology ensures precision,
+                efficiency, and consistency in every product we manufacture.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="relative">
+                  <img
+                    src="/images/manufacturing-technology-equipment.jpg"
+                    alt="Advanced manufacturing technology and equipment at Deva International"
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
+                  <div className="absolute bottom-4 left-4 bg-white rounded-lg p-4 shadow-lg">
+                    <p className="font-medium text-leather-dark">
+                      Latest Technology
+                    </p>
+                    <p className="text-sm text-leather-dark/70">
+                      Precision & Efficiency
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-serif font-medium text-leather-dark mb-4">
+                  State-of-the-Art Equipment
+                </h3>
+                <div className="space-y-4 text-leather-dark/80">
+                  <p>
+                    Our manufacturing facilities are equipped with the latest
+                    technology in leather goods production, including
+                    computer-controlled cutting systems, automated stitching
+                    machines, and precision finishing equipment.
+                  </p>
+                  <p>
+                    This advanced machinery allows us to maintain consistent
+                    quality while increasing production efficiency and reducing
+                    material waste.
+                  </p>
+                </div>
+
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-start">
+                    <BadgeCheck className="h-5 w-5 text-leather mr-3 mt-0.5" />
+                    <p className="text-leather-dark/80">
+                      Computer-controlled cutting systems for precision and
+                      minimal waste
+                    </p>
+                  </div>
+
+                  <div className="flex items-start">
+                    <BadgeCheck className="h-5 w-5 text-leather mr-3 mt-0.5" />
+                    <p className="text-leather-dark/80">
+                      Automated stitching machines for consistent quality
+                    </p>
+                  </div>
+
+                  <div className="flex items-start">
+                    <BadgeCheck className="h-5 w-5 text-leather mr-3 mt-0.5" />
+                    <p className="text-leather-dark/80">
+                      Advanced finishing equipment for premium surface
+                      treatments
                     </p>
                   </div>
                 </div>
@@ -263,7 +347,7 @@ const ManufacturingPage = () => {
                   <div className="md:pl-16">
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <img
-                        src="https://images.unsplash.com/photo-1598520428614-6698d7e2ac99?auto=format&fit=crop&w=800&h=600&q=80"
+                        src="/images/leather-manufacturing-process-1.jpg"
                         alt="Material selection process"
                         className="w-full h-auto rounded-md"
                       />
@@ -298,7 +382,7 @@ const ManufacturingPage = () => {
                   <div className="md:order-1 md:pr-16">
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <img
-                        src="https://images.unsplash.com/photo-1629989884715-c155c77f0362?auto=format&fit=crop&w=800&h=600&q=80"
+                        src="/images/leather-manufacturing-process-2.jpg"
                         alt="Leather cutting process"
                         className="w-full h-auto rounded-md"
                       />
@@ -332,7 +416,7 @@ const ManufacturingPage = () => {
                   <div className="md:pl-16">
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <img
-                        src="https://images.unsplash.com/photo-1556930942-ce0b3b5f3fbf?auto=format&fit=crop&w=800&h=600&q=80"
+                        src="/images/leather-manufacturing-process-3.jpg"
                         alt="Leather stitching process"
                         className="w-full h-auto rounded-md"
                       />
@@ -367,7 +451,7 @@ const ManufacturingPage = () => {
                   <div className="md:order-1 md:pr-16">
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <img
-                        src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&h=600&q=80"
+                        src="/images/leather-manufacturing-process-4.jpg"
                         alt="Leather product finishing"
                         className="w-full h-auto rounded-md"
                       />
@@ -404,7 +488,7 @@ const ManufacturingPage = () => {
               <div>
                 <div className="relative">
                   <img
-                    src="https://images.unsplash.com/photo-1581092723640-905036378549?auto=format&fit=crop&w=1200&h=800&q=80"
+                    src="/images/quality-control-testing.jpg"
                     alt="R&D laboratory at Deva International"
                     className="w-full h-auto rounded-lg shadow-lg"
                   />
@@ -538,7 +622,7 @@ const ManufacturingPage = () => {
               <div className="order-1 lg:order-2">
                 <div className="relative">
                   <img
-                    src="https://images.unsplash.com/photo-1518783193827-3fab467d7563?auto=format&fit=crop&w=1200&h=800&q=80"
+                    src="/images/sustainability-environmental-practices.jpg"
                     alt="Sustainable manufacturing at Deva International"
                     className="w-full h-auto rounded-lg shadow-lg"
                   />

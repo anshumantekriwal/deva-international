@@ -14,21 +14,21 @@ const handbagCollections = [
     name: "Backpacks",
     description:
       "Functional yet stylish backpacks, perfect for professionals and travelers alike.",
-    imageUrl: "/images/PLB1.JPG",
+    imageUrl: "/images/premium-leather-bags-collection-1.jpg",
   },
   {
     id: 2,
     name: "Hand Bags",
     description:
       "Handcrafted leather handbags with timeless elegance and refined style, ideal for both formal and casual settings.",
-    imageUrl: "/images/PLB 2.jpg",
+    imageUrl: "/images/premium-leather-bags-collection-2.jpg",
   },
   {
     id: 3,
     name: "Other Segments",
     description:
       "From leather waist bags to crossbody and sling styles, includes unique, fashion-forward designs to complement any look.",
-    imageUrl: "/images/PLB 3.jpg",
+    imageUrl: "/images/premium-leather-bags-collection-3.jpg",
   },
 ];
 
@@ -38,8 +38,10 @@ const ProductsHandbags = () => {
   }, []);
 
   const handleViewCatalog = () => {
-    // This will be replaced with the actual DocSend link later
-    window.open("https://www.docsend.com/catalog-link", "_blank");
+    window.open(
+      "https://docsend.com/view/deva-international-catalog",
+      "_blank"
+    );
   };
 
   return (
@@ -87,7 +89,7 @@ const ProductsHandbags = () => {
               <div className="order-1 md:order-2 relative">
                 <div className="relative overflow-hidden rounded-lg shadow-xl">
                   <img
-                    src="/images/PLB 4.jpg"
+                    src="/images/premium-leather-bags-hero.jpg"
                     alt="Premium leather bags collection"
                     className="w-full h-auto object-cover"
                   />
@@ -177,7 +179,7 @@ const ProductsHandbags = () => {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative rounded-lg overflow-hidden shadow-lg">
                   <img
-                    src="/images/A62_0560.JPG"
+                    src="/images/leather-bag-craftsmanship-detail.jpg"
                     alt="Leather bag craftsmanship"
                     className="w-full h-auto object-cover"
                   />
@@ -187,7 +189,7 @@ const ProductsHandbags = () => {
                     The Art of Premium Leather Bag Manufacturing
                   </h3>
                   <p className="text-leather-dark/80 mb-6">
-                    With over 32 years of experience in the leather bags
+                    With over 31 years of experience in the leather bags
                     industry, our skilled craftsmen combine precision and
                     innovation to produce luxury leather bags that meet
                     international standards.

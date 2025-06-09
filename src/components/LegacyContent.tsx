@@ -1,6 +1,9 @@
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const LegacyContent = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-12 md:py-16 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-subtle-grain opacity-10" />
@@ -18,7 +21,7 @@ const LegacyContent = () => {
           <div className="relative">
             <div className="relative rounded-xl overflow-hidden">
               <img
-                src="images/A62_0598.JPG"
+                src="images/legacy-heritage-story.jpg"
                 alt="Leather workshop with skilled artisans"
                 className="w-full h-auto object-cover"
               />
@@ -95,7 +98,7 @@ const LegacyContent = () => {
             <div className="mt-8">
               <button
                 className="btn-primary inline-flex items-center group"
-                onClick={() => (window.location.href = "/legacy")}
+                onClick={() => navigate("/about")}
               >
                 Discover Our Story
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
