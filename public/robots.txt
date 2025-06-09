@@ -1,0 +1,24 @@
+# Robots.txt for Deva International
+# Allow search engines to crawl all public pages
+
+User-agent: *
+Allow: /
+
+# Block admin and private areas
+Disallow: /admin
+Disallow: /admin/
+
+# Block common files that shouldn't be indexed
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /api/
+Disallow: /_/
+
+# Allow access to sitemap
+Allow: /sitemap.xml
+
+# Reference to sitemap
+Sitemap: https://www.devainternational.com/sitemap.xml
+
+# Crawl delay (optional - adjust if needed)
+# Crawl-delay: 1 
