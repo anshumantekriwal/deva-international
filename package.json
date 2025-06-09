@@ -15,6 +15,7 @@
     "source": "dist",
     "inlineCss": true,
     "minifyHtml": true,
+    "skipThirdPartyRequests": true,
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox",
