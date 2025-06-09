@@ -9,6 +9,17 @@ export default defineConfig({
     port: 8080,
   },
   plugins: [react()],
+  build: {
+    target: "es2017", // ← transpile modern syntax (including ?. ) down to ES2017
+    outDir: "dist",
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) return "vendor";
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
